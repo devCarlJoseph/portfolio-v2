@@ -14,27 +14,27 @@ export function Header() {
 
           <nav className="flex items-center space-x-6 sm:space-x-8">
             <NavLink
-              to="/"
+              to="/about"
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
             >
               About
             </NavLink>
             <NavLink
-              to="/about"
+              to="/projects"
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
             >
               Projects
             </NavLink>
 
             <NavLink
-              to="/about"
+              to="/services"
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
             >
               Services
             </NavLink>
 
             <NavLink
-              to="/contact"
+              to="/certifications"
               className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
             >
               Certifications
@@ -42,7 +42,9 @@ export function Header() {
           </nav>
 
           <div>
-            <button className="text-sm bg-black text-white px-4 py-2 rounded-md">Contact Me</button>
+            <button className="text-sm bg-black text-white px-4 py-2 rounded-md">
+              <NavLink to="/contact">Contact Me</NavLink>
+            </button>
           </div>
         </div>
       </div>
