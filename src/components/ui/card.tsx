@@ -1,23 +1,45 @@
-import { Button } from "@/components/ui/button";
+import * as React from "react";
 
-type CardProps = {
-  title: string;
-  description: string;
-  buttonLabel: string;
-  buttonVariant?: "primary" | "secondary" | "tertiary";
-};
+import { cn } from "@/lib/cn";
 
 export function Card({
-  title,
-  description,
-  buttonLabel,
-  buttonVariant = "primary",
-}: CardProps) {
+  className,
+  size = "default",
+  ...props
+}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
   return (
-    <div className="border border-gray-200 rounded-lg p-6 bg-white hover:bg-gray-50 transition-colors">
-      <h1 className="text-xl font-semibold mb-2">{title}</h1>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <Button variant={buttonVariant}>{buttonLabel}</Button>
-    </div>
+    <div
+      className={cn(
+        "flex flex-col overflow-hidden border border-gray-200 rounded-xl",
+        size === "default" ? "gap-4 p-4" : "gap-3 p-3",
+        className,
+      )}
+      {...props}
+    />
+  );
+}
+
+export function CardHeader({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("flex flex-col py-3 px-3", className)} {...props} />
+  );
+}
+
+export function CardTitle({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return <div className={cn("text-md font-medium", className)} {...props} />;
+}
+
+export function CardContent({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("flex flex-col px-3 py-3", className)} {...props} />
   );
 }
