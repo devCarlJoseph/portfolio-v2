@@ -1,5 +1,7 @@
 import { NavLink } from "react-router";
 
+import { Button } from "@/components/ui/button";
+
 export function Header() {
   return (
     <header className="bg-whote border-b border-gray-200 sticky top-0 z-50">
@@ -42,9 +44,9 @@ export function Header() {
           </nav>
 
           <div>
-            <button className="text-sm bg-black text-white px-4 py-2 rounded-md">
+            <Button>
               <NavLink to="/contact">Contact Me</NavLink>
-            </button>
+            </Button>
           </div>
         </div>
       </div>

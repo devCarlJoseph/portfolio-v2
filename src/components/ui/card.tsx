@@ -2,17 +2,19 @@ import * as React from "react";
 
 import { cn } from "@/lib/cn";
 
+type CardProps = React.ComponentProps<"div"> & {
+  size?: "default" | "sm";
+};
+
 export function Card({
   className,
-  size = "default",
   ...props
-}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
+}: CardProps) {
   return (
     <div
       className={cn(
-        "flex flex-col overflow-hidden border border-[#3b3b3b] rounded-xl text-white bg-[#1f1f1f]",
-        size === "default" ? "gap-2" : "gap-3",
-        className,
+        "rounded-xl border border-border bg-card text-card-foreground shadow-sm",
+        className
       )}
       {...props}
     />
@@ -24,7 +26,13 @@ export function CardHeader({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("flex flex-col py-3 px-4", className)} {...props} />
+    <div
+      className={cn(
+        "flex flex-col space-y-1.5 p-6",
+        className
+      )}
+      {...props}
+    />
   );
 }
 
@@ -32,7 +40,30 @@ export function CardTitle({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  return <div className={cn("text-md font-medium", className)} {...props} />;
+  return (
+    <div
+      className={cn(
+        "font-semibold leading-none tracking-tight",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+export function CardDescription({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
+  return (
+    <div
+      className={cn(
+        "text-sm text-muted-foreground",
+        className
+      )}
+      {...props}
+    />
+  );
 }
 
 export function CardContent({
@@ -40,22 +71,27 @@ export function CardContent({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("flex flex-col pb-2 px-4", className)} {...props} />
-  );
-}
-
-export function CardDescription({className, ...props}: React.ComponentProps<"div">) {
-  return (
-    <div className={cn("text-sm text-white/50", className)}
-    {...props}
+    <div
+      className={cn(
+        "p-6 pt-0",
+        className
+      )}
+      {...props}
     />
   );
 }
 
-export function CardFooter({className, ...props}: React.ComponentProps<"div">) {
+export function CardFooter({
+  className,
+  ...props
+}: React.ComponentProps<"div">) {
   return (
-    <div className={cn("flex items-center border-[#3b3b3b] rounded-b-xl border-t py-3 bg-black/50", className)}
-    {...props}
+    <div
+      className={cn(
+        "flex items-center rounded-b-xl border-t border-border bg-muted/50 p-5",
+        className
+      )}
+      {...props}
     />
   );
 }
