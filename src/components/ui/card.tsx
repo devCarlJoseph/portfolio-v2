@@ -10,8 +10,8 @@ export function Card({
   return (
     <div
       className={cn(
-        "flex flex-col overflow-hidden border border-gray-200 rounded-xl",
-        size === "default" ? "gap-4 p-4" : "gap-3 p-3",
+        "flex flex-col overflow-hidden border border-[#3b3b3b] rounded-xl text-white bg-[#1f1f1f]",
+        size === "default" ? "gap-2" : "gap-3",
         className,
       )}
       {...props}
@@ -24,7 +24,7 @@ export function CardHeader({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("flex flex-col py-3 px-3", className)} {...props} />
+    <div className={cn("flex flex-col py-3 px-4", className)} {...props} />
   );
 }
 
@@ -40,6 +40,22 @@ export function CardContent({
   ...props
 }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("flex flex-col px-3 py-3", className)} {...props} />
+    <div className={cn("flex flex-col pb-2 px-4", className)} {...props} />
+  );
+}
+
+export function CardDescription({className, ...props}: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("text-sm text-white/50", className)}
+    {...props}
+    />
+  );
+}
+
+export function CardFooter({className, ...props}: React.ComponentProps<"div">) {
+  return (
+    <div className={cn("flex items-center border-[#3b3b3b] rounded-b-xl border-t py-3 bg-black/50", className)}
+    {...props}
+    />
   );
 }

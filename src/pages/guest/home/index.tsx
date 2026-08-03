@@ -1,4 +1,11 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+  CardDescription,
+} from "@/components/ui/card";
 
 export default function HomePage() {
   return (
@@ -6,16 +13,45 @@ export default function HomePage() {
       <section>
         <h1 className="text-4xl font-bold">Hello Im Carl Joseph Sumagang</h1>
       </section>
-      <section>
-        <Card className="w-full max-w-sm gap-0">
-          <CardHeader className="bg-red-200">
-            <CardTitle> This is My Card Title</CardTitle>
+      <section className="flex justify-center items-center bg-black h-100">
+        <Card className="w-full max-w-sm">
+          <CardHeader>
+            <CardTitle> Login to your account</CardTitle>
+            <CardDescription>
+              Enter your email below to login to your account
+            </CardDescription>
           </CardHeader>
-          <CardContent className="bg-red-200 ">
-            This is My Card Content
+          <CardContent>
+            <form action="">
+              <div className="flex flex-col gap-6">
+                <div className="grid gap-2">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="email"
+                    placeholder="carl@example.com"
+                    required
+                    className="border border-[#3b3b3b] py-1.5 px-2 rounded-lg"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <label htmlFor="email">Password</label>
+                  <input
+                    type="password"
+                    required
+                    className="border border-[#3b3b3b] py-1.5 px-2 rounded-lg"
+                  />
+                </div>
+              </div>
+            </form>
           </CardContent>
-
-          Kaon sako guys hahaha
+          <CardFooter className="flex-col gap-2">
+            <button className="bg-white/80 text-black w-80 py-1 rounded-lg">
+              Login
+            </button>
+            <button className="bg-transaparent border border-[#3b3b3b] text-white/80 w-80 py-1 rounded-lg">
+              Login With Google
+            </button>
+          </CardFooter>
         </Card>
       </section>
     </>
