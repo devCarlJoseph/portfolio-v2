@@ -7,6 +7,8 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+
 import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
@@ -19,19 +21,36 @@ export default function HomePage() {
         <Card className="w-full max-w-sm">
           <CardHeader>
             <CardTitle></CardTitle>
-            <CardDescription>
-            </CardDescription>
+            <CardDescription></CardDescription>
           </CardHeader>
-          <CardContent>
-          
-          </CardContent>
-          <CardFooter className="flex-col gap-3">
-        
-          </CardFooter>
+          <CardContent></CardContent>
+          <CardFooter className="flex-col gap-3"></CardFooter>
         </Card>
       </section>
       <section>
         <Button>This is my Button</Button>
+      </section>
+
+      <section>
+        <Accordion>
+          <AccordionItem value="item-1">
+            <AccordionTrigger value="item-1">What is React?</AccordionTrigger>
+
+            <AccordionContent value="item-1">
+              React is a JavaScript library for building user interfaces.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="item-2">
+            <AccordionTrigger value="item-2">
+              What is TypeScript?
+            </AccordionTrigger>
+
+            <AccordionContent value="item-2">
+              TypeScript is JavaScript with types.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </section>
     </>
   );
