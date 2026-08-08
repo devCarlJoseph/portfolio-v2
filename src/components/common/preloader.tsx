@@ -59,7 +59,7 @@ export function Preloader({ children }: { children: React.ReactNode }) {
           <img
             src="/1.png"
             alt="CJS"
-            className="preloader-logo h-24 w-auto"
+            className="preloader-logo h-24 w-auto md:h-32"
           />
           <div className="w-64 md:w-80">
             <div className="mb-2 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[0.3em] text-muted-foreground">
