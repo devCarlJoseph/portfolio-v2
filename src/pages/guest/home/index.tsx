@@ -6,10 +6,15 @@ import {
   CardFooter,
   CardDescription,
 } from "@/components/ui/card";
-
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export default function HomePage() {
   return (
@@ -51,6 +56,10 @@ export default function HomePage() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      </section>
+      <section className="h-50">
+        <Label>Username</Label>
+        <Input/>
       </section>
     </>
   );

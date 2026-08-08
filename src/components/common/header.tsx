@@ -44,7 +44,7 @@ export function Header() {
           </nav>
 
           <div>
-            <Button variant={"secondary"}>
+            <Button>
               <NavLink to="/contact">Contact Me</NavLink>
             </Button>
           </div>
