@@ -1,8 +1,9 @@
-import "@/styles/global.css";
+import "@/styles/styles.css";
+
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
-
 import GuestLayout from "@/pages/guest/layout";
+import { Preloader } from "@/components/common/preloader";
 
 import HomePage from "@/pages/guest/home";
 import AboutPage from "@/pages/guest/about";
@@ -13,7 +14,7 @@ import CertificationsPage from "@/pages/guest/certifications";
 
 function App() {
   return (
-    <>
+    <Preloader>
       <BrowserRouter>
         <Routes>
           {/* Guest Pages */}
@@ -29,7 +30,7 @@ function App() {
           {/* Dashboard Pages */}
         </Routes>
       </BrowserRouter>
-    </>
+    </Preloader>
   );
 }
 

@@ -6,16 +6,9 @@ import {
   CardFooter,
   CardDescription,
 } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { PixelDevMascot } from "@/components/ui/mascot";
 
 export default function HomePage() {
   return (
@@ -37,35 +30,12 @@ export default function HomePage() {
         <Button>This is my Button</Button>
       </section>
 
-      <section>
-        <Accordion>
-          <AccordionItem value="item-1">
-            <AccordionTrigger value="item-1">What is React?</AccordionTrigger>
-
-            <AccordionContent value="item-1">
-              React is a JavaScript library for building user interfaces.
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem value="item-2">
-            <AccordionTrigger value="item-2">
-              What is TypeScript?
-            </AccordionTrigger>
-
-            <AccordionContent value="item-2">
-              TypeScript is JavaScript with types.
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </section>
+      <section></section>
       <section>
         <div>
           <Label>Username</Label>
           <Input placeholder="username" />
         </div>
-      </section>
-      <section className="h-50">
-        <PixelDevMascot />
       </section>
     </>
   );
