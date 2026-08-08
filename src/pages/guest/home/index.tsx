@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { PixelDevMascot } from "@/components/ui/mascot";
 
 export default function HomePage() {
   return (
@@ -57,9 +58,14 @@ export default function HomePage() {
           </AccordionItem>
         </Accordion>
       </section>
+      <section>
+        <div>
+          <Label>Username</Label>
+          <Input placeholder="username" />
+        </div>
+      </section>
       <section className="h-50">
-        <Label>Username</Label>
-        <Input/>
+        <PixelDevMascot />
       </section>
     </>
   );

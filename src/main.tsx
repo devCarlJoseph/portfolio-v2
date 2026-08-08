@@ -1,5 +1,4 @@
 import "@/styles/global.css";
-
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 
@@ -12,21 +11,26 @@ import ProjectsPage from "@/pages/guest/projects";
 import ServicesPage from "@/pages/guest/services";
 import CertificationsPage from "@/pages/guest/certifications";
 
-createRoot(document.getElementById("root")!).render(
-  <BrowserRouter>
-    <Routes>
-      {/* Guest Pages */}
-      <Route element={<GuestLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/certifications" element={<CertificationsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        
-      </Route>
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          {/* Guest Pages */}
+          <Route element={<GuestLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Route>
 
-      {/* Dashboard Pages */}
-    </Routes>
-  </BrowserRouter>,
-)
+          {/* Dashboard Pages */}
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+}
+
+createRoot(document.getElementById("root")!).render(<App />);
