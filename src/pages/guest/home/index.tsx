@@ -1,42 +1,17 @@
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-  CardDescription,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import { FaqSection } from "@/components/features/home/faq-section";
+import { FeaturedProjectsSection } from "@/components/features/home/featured-projects-section";
+import { GithubSection } from "@/components/features/home/github-section";
+import { HeroSection } from "@/components/features/home/hero-section";
+import { ServicesSection } from "@/components/features/home/services-section";
 
 export default function HomePage() {
   return (
     <>
-      <section>
-        <h1 className="text-4xl font-bold">Hello Im Carl Joseph Sumagang</h1>
-      </section>
-      <section className="flex justify-center items-center h-100">
-        <Card className="w-full max-w-sm">
-          <CardHeader>
-            <CardTitle></CardTitle>
-            <CardDescription></CardDescription>
-          </CardHeader>
-          <CardContent></CardContent>
-          <CardFooter className="flex-col gap-3"></CardFooter>
-        </Card>
-      </section>
-      <section>
-        <Button>This is my Button</Button>
-      </section>
-
-      <section></section>
-      <section>
-        <div>
-          <Label>Username</Label>
-          <Input placeholder="username" />
-        </div>
-      </section>
+      <HeroSection />
+      <ServicesSection />
+      <FeaturedProjectsSection />
+      <FaqSection />
+      <GithubSection />
     </>
   );
 }
