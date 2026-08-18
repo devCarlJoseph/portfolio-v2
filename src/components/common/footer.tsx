@@ -17,7 +17,7 @@ export function Footer() {
               <img
                 src="/1.png"
                 alt="Carl Joseph Logo"
-                className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-10 w-auto object-contain transition-all group-hover:scale-105 dark:brightness-0 dark:invert"
               />
               <div className="flex flex-col">
                 <span className="text-base sm:text-lg font-bold tracking-tight text-foreground font-sans">

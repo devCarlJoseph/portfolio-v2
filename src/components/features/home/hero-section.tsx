@@ -423,40 +423,38 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden py-8 md:py-12 lg:py-14">
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
-          <HeroIntroduction />
-          <StudioPreview
-            config={config}
-            activeMode={activeMode}
-            setActiveMode={setActiveMode}
-            selectedProjectType={selectedProjectType}
-            setSelectedProjectType={setSelectedProjectType}
-            activeJsonTab={activeJsonTab}
-            setActiveJsonTab={setActiveJsonTab}
-            setIsCartOpen={setIsCartOpen}
-            isCartOpen={isCartOpen}
-            setOrderCompleted={setOrderCompleted}
-            orderCompleted={orderCompleted}
-            cartItems={cartItems}
-            totalCartCount={totalCartCount}
-            cartSubtotal={cartSubtotal}
-            selectedPlan={selectedPlan}
-            setSelectedPlan={setSelectedPlan}
-            bookingSent={bookingSent}
-            setBookingSent={setBookingSent}
-            copied={copied}
-            jsonError={jsonError}
-            setJsonError={setJsonError}
-            addToCart={addToCart}
-            updateQuantity={updateQuantity}
-            getAddressUrl={getAddressUrl}
-            getActiveJsonText={getActiveJsonText}
-            handleCopy={handleCopy}
-            handleJsonUpdate={handleJsonUpdate}
-            handleResetConfig={handleResetConfig}
-          />
-        </div>
+      <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <HeroIntroduction />
+        <StudioPreview
+          config={config}
+          activeMode={activeMode}
+          setActiveMode={setActiveMode}
+          selectedProjectType={selectedProjectType}
+          setSelectedProjectType={setSelectedProjectType}
+          activeJsonTab={activeJsonTab}
+          setActiveJsonTab={setActiveJsonTab}
+          setIsCartOpen={setIsCartOpen}
+          isCartOpen={isCartOpen}
+          setOrderCompleted={setOrderCompleted}
+          orderCompleted={orderCompleted}
+          cartItems={cartItems}
+          totalCartCount={totalCartCount}
+          cartSubtotal={cartSubtotal}
+          selectedPlan={selectedPlan}
+          setSelectedPlan={setSelectedPlan}
+          bookingSent={bookingSent}
+          setBookingSent={setBookingSent}
+          copied={copied}
+          jsonError={jsonError}
+          setJsonError={setJsonError}
+          addToCart={addToCart}
+          updateQuantity={updateQuantity}
+          getAddressUrl={getAddressUrl}
+          getActiveJsonText={getActiveJsonText}
+          handleCopy={handleCopy}
+          handleJsonUpdate={handleJsonUpdate}
+          handleResetConfig={handleResetConfig}
+        />
       </div>
     </section>
   );

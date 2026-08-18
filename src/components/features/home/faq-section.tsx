@@ -94,8 +94,7 @@ export function FaqSection() {
 
   return (
     <section className="relative overflow-hidden py-10 sm:py-14 md:py-16 border-t border-border/50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+      {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -252,7 +251,6 @@ export function FaqSection() {
             </AnimatePresence>
           </div>
         </div>
-      </div>
     </section>
   );
 }
