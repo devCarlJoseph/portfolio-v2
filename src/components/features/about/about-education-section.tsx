@@ -36,7 +36,7 @@ export function AboutEducationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-8 flex flex-col justify-between rounded-2xl border border-border bg-card p-6 sm:p-8 shadow-xs"
+          className="lg:col-span-8 flex flex-col justify-between rounded-2xl border border-dashed border-border/90 bg-card p-6 sm:p-8 shadow-xs"
         >
           <div>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-border/60 mb-4">
@@ -97,7 +97,7 @@ export function AboutEducationSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-30px" }}
           transition={{ duration: 0.45, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="lg:col-span-4 flex flex-col rounded-2xl border border-border bg-card p-6 sm:p-8 space-y-4 shadow-xs"
+          className="lg:col-span-4 flex flex-col rounded-2xl border border-dashed border-border/90 bg-card p-6 sm:p-8 space-y-4 shadow-xs"
         >
           <div className="flex items-center gap-3 pb-3 border-b border-border/60">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-muted/40 text-foreground">

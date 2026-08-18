@@ -9,7 +9,7 @@ export function AboutCtaSection() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45 }}
-      className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 sm:p-10 text-card-foreground shadow-sm"
+      className="relative overflow-hidden rounded-2xl border border-dashed border-border/90 bg-card p-6 sm:p-10 text-card-foreground shadow-sm"
     >
       <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div className="max-w-xl space-y-2">

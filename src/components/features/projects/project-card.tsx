@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code2, Info, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight, Code, Info, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
 import { type ProjectItem } from "@/data/projects";
 
@@ -19,7 +19,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
         delay: (index % 3) * 0.08,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-border/80 hover:shadow-xl dark:hover:shadow-neutral-950/50"
+      className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-dashed border-border/90 bg-card transition-all duration-300 hover:border-foreground/40 hover:shadow-xl dark:hover:shadow-neutral-950/50"
     >
       {/* Top Media & Image Header */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted/40 border-b border-border/70">
@@ -29,7 +29,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
           loading="lazy"
           className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
         />
-        
+
         {/* Soft overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-80 transition-opacity group-hover:opacity-60" />
 
@@ -118,7 +118,7 @@ export function ProjectCard({ project, index, onSelect }: ProjectCardProps) {
                   aria-label={`View ${project.title} source code`}
                   className="inline-flex items-center gap-1 rounded-lg border border-border bg-muted/30 px-2.5 py-1.5 font-mono text-xs font-medium text-foreground transition-all hover:bg-muted active:scale-95"
                 >
-                  <Code2 className="h-3.5 w-3.5" />
+                  <Code className="h-3.5 w-3.5" />
                   <span>Code</span>
                 </a>
               )}

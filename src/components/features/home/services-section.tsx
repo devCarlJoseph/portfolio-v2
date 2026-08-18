@@ -142,7 +142,7 @@ function CompactServiceCard({
       }}
       className="h-full"
     >
-      <div className="group relative flex h-full flex-col justify-between rounded-xl border border-border/80 bg-card p-4.5 sm:p-5 transition-all duration-300 hover:border-foreground/30 hover:shadow-md hover:shadow-foreground/[0.02]">
+      <div className="group relative flex h-full flex-col justify-between rounded-xl border border-dashed border-border/90 bg-card p-4.5 sm:p-5 transition-all duration-300 hover:border-foreground/30 hover:shadow-md hover:shadow-foreground/[0.02]">
         {/* Top: Index + Icon */}
         <div>
           <div className="flex items-center justify-between">

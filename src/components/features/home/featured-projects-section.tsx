@@ -266,7 +266,7 @@ function ProjectDeckCard({
       onClick={() => {
         if (!isActive) onClick();
       }}
-      className={`absolute w-[86vw] max-w-[390px] sm:max-w-[430px] md:max-w-[460px] overflow-hidden rounded-2xl border border-border bg-card shadow-xl transition-all duration-300 ${
+      className={`absolute w-[86vw] max-w-[390px] sm:max-w-[430px] md:max-w-[460px] overflow-hidden rounded-2xl border border-dashed border-border/90 bg-card shadow-xl transition-all duration-300 ${
         isActive
           ? "cursor-default ring-1 ring-border/80 shadow-foreground/[0.06] dark:shadow-neutral-950/70"
           : "cursor-pointer hover:border-foreground/30 hover:shadow-md"

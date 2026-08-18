@@ -334,7 +334,7 @@ export function AboutTechStackSection() {
                   delay: (idx % 4) * 0.04,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative flex flex-col justify-between rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:border-foreground/40 hover:shadow-md dark:hover:shadow-neutral-950/60"
+                className="group relative flex flex-col justify-between rounded-2xl border border-dashed border-border/90 bg-card p-5 transition-all duration-300 hover:border-foreground/40 hover:shadow-md dark:hover:shadow-neutral-950/60"
               >
                 <div>
                   {/* Card Header with Logo Icon & Level Badge */}

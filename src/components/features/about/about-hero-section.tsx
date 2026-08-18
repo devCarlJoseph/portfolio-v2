@@ -46,7 +46,7 @@ export function AboutHeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+        className="overflow-hidden rounded-2xl border border-dashed border-border/90 bg-card shadow-sm"
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-8 lg:p-10">
           {/* Profile Image Column */}
