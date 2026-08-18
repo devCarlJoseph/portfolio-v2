@@ -14,9 +14,6 @@ export function Header() {
                 alt="Carl Joseph Logo"
                 className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
               />
-              <span className="font-bold tracking-tight text-foreground font-sans text-base hidden sm:inline-block">
-                Carl Joseph
-              </span>
             </NavLink>
           </div>
 

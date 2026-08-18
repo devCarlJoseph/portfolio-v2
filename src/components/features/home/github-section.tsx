@@ -1,226 +1,28 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import {
   ArrowUpRight,
   GitBranch,
   Star,
   ExternalLink,
   Code2,
+  CheckCircle2,
 } from "lucide-react";
 import { motion } from "motion/react";
+import {
+  useGitHubContributions,
+  formatContributionDate,
+} from "@/lib/github";
 
-/**
- * --------------------------------------------------------------------------
- * GITHUB REPOSITORIES DATA
- * --------------------------------------------------------------------------
- */
-interface PinnedRepo {
-  name: string;
-  description: string;
-  language: string;
-  languageColor: string;
-  stars: number;
-  forks: number;
-  url: string;
-}
-
-const PINNED_REPOS: PinnedRepo[] = [
-  {
-    name: "portfolio-v2",
-    description:
-      "Modern developer portfolio and showcase built with React 19, Vite, Tailwind CSS, and Motion.",
-    language: "TypeScript",
-    languageColor: "#3178c6",
-    stars: 1,
-    forks: 0,
-    url: "https://github.com/devCarlJoseph/portfolio-v2",
-  },
-  {
-    name: "devCarlJoseph",
-    description:
-      "Config files, developer profile documentation, and open source configurations.",
-    language: "Markdown",
-    languageColor: "#083fa1",
-    stars: 1,
-    forks: 0,
-    url: "https://github.com/devCarlJoseph/devCarlJoseph",
-  },
-];
-
-/**
- * Exact contribution matrix matching Carl's 265 contributions in the last year
- */
-function getExactContributionMatrix() {
-  const months = [
-    { label: "Aug", col: 0 },
-    { label: "Sep", col: 4 },
-    { label: "Oct", col: 8 },
-    { label: "Nov", col: 13 },
-    { label: "Dec", col: 17 },
-    { label: "Jan", col: 22 },
-    { label: "Feb", col: 26 },
-    { label: "Mar", col: 30 },
-    { label: "Apr", col: 35 },
-    { label: "May", col: 39 },
-    { label: "Jun", col: 43 },
-    { label: "Jul", col: 47 },
-    { label: "Aug", col: 50 },
-  ];
-
-  // Specific grid activity map matching the screenshot (col 0 - 51, row 0 - 6)
-  // row 0: Sun, row 1: Mon, row 2: Tue, row 3: Wed, row 4: Thu, row 5: Fri, row 6: Sat
-  const activeCells: Record<string, { count: number; level: number }> = {
-    // Sep
-    "4-6": { count: 3, level: 2 },
-    "5-1": { count: 4, level: 2 },
-    "5-6": { count: 3, level: 2 },
-    "6-1": { count: 4, level: 2 },
-
-    // Oct (Heavy active block with bright Level 4 peaks)
-    "6-0": { count: 12, level: 4 },
-    "6-2": { count: 5, level: 2 },
-    "6-3": { count: 6, level: 3 },
-    "6-4": { count: 5, level: 2 },
-    "6-6": { count: 4, level: 2 },
-    "7-0": { count: 5, level: 2 },
-    "7-1": { count: 6, level: 3 },
-    "7-2": { count: 5, level: 2 },
-    "7-3": { count: 6, level: 3 },
-    "7-6": { count: 5, level: 2 },
-    "8-0": { count: 4, level: 2 },
-    "8-1": { count: 5, level: 2 },
-    "8-2": { count: 6, level: 3 },
-    "8-3": { count: 5, level: 2 },
-    "8-5": { count: 14, level: 4 },
-    "9-4": { count: 4, level: 2 },
-    "9-5": { count: 5, level: 2 },
-    "9-6": { count: 5, level: 2 },
-
-    // Nov
-    "10-0": { count: 4, level: 2 },
-    "13-2": { count: 7, level: 3 },
-    "13-5": { count: 11, level: 4 },
-    "13-6": { count: 6, level: 3 },
-
-    // Dec
-    "14-1": { count: 5, level: 2 },
-    "14-2": { count: 4, level: 2 },
-    "14-4": { count: 4, level: 2 },
-    "14-5": { count: 5, level: 2 },
-    "14-6": { count: 6, level: 3 },
-
-    // Jan / Feb (Column with bright Wed peak)
-    "20-0": { count: 5, level: 2 },
-    "20-2": { count: 4, level: 2 },
-    "20-4": { count: 5, level: 2 },
-    "20-5": { count: 5, level: 2 },
-    "20-6": { count: 4, level: 2 },
-    "21-1": { count: 4, level: 2 },
-    "21-3": { count: 13, level: 4 },
-    "21-4": { count: 5, level: 2 },
-    "21-5": { count: 7, level: 3 },
-    "22-5": { count: 6, level: 3 },
-    "24-5": { count: 5, level: 2 },
-
-    // Mar (Very dense active cluster)
-    "26-1": { count: 5, level: 2 },
-    "26-2": { count: 4, level: 2 },
-    "26-3": { count: 5, level: 2 },
-    "26-4": { count: 4, level: 2 },
-    "26-6": { count: 7, level: 3 },
-    "27-0": { count: 5, level: 2 },
-    "27-1": { count: 12, level: 4 },
-    "27-2": { count: 8, level: 3 },
-    "27-3": { count: 5, level: 2 },
-    "27-4": { count: 4, level: 2 },
-    "28-0": { count: 8, level: 3 },
-    "28-1": { count: 5, level: 2 },
-    "28-2": { count: 4, level: 2 },
-    "28-3": { count: 5, level: 2 },
-    "28-4": { count: 12, level: 4 },
-    "29-0": { count: 6, level: 3 },
-    "29-1": { count: 4, level: 2 },
-    "29-2": { count: 4, level: 2 },
-    "29-3": { count: 5, level: 2 },
-    "29-5": { count: 6, level: 3 },
-
-    // Apr (Bright Thu peak)
-    "30-2": { count: 14, level: 4 },
-    "30-3": { count: 5, level: 2 },
-    "30-5": { count: 6, level: 3 },
-    "31-0": { count: 8, level: 3 },
-    "31-1": { count: 7, level: 3 },
-    "31-5": { count: 4, level: 2 },
-
-    // May
-    "33-1": { count: 5, level: 2 },
-    "33-2": { count: 4, level: 2 },
-    "33-3": { count: 5, level: 2 },
-    "33-4": { count: 4, level: 2 },
-    "33-5": { count: 4, level: 2 },
-    "33-6": { count: 6, level: 3 },
-    "34-0": { count: 4, level: 2 },
-    "34-1": { count: 5, level: 2 },
-    "34-2": { count: 4, level: 2 },
-
-    // Jul
-    "40-2": { count: 4, level: 2 },
-
-    // Aug (Current activity)
-    "48-2": { count: 4, level: 2 },
-    "48-4": { count: 5, level: 2 },
-    "49-0": { count: 7, level: 3 },
-    "49-1": { count: 5, level: 2 },
-    "49-2": { count: 4, level: 2 },
-    "49-4": { count: 5, level: 2 },
-    "49-5": { count: 5, level: 2 },
-    "49-6": { count: 5, level: 2 },
-    "50-0": { count: 3, level: 2 },
-  };
-
-  const startDate = new Date("2025-08-17");
-  const weeks = [];
-
-  for (let w = 0; w < 52; w++) {
-    const week = [];
-    for (let d = 0; d < 7; d++) {
-      const cellDate = new Date(startDate);
-      cellDate.setDate(cellDate.getDate() + (w * 7 + d));
-
-      const key = `${w}-${d}`;
-      const activity = activeCells[key] || { count: 0, level: 0 };
-
-      const formattedDate = cellDate.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-      });
-
-      week.push({
-        date: formattedDate,
-        count: activity.count,
-        level: activity.level,
-      });
-    }
-    weeks.push(week);
-  }
-
-  return { weeks, monthLabels: months };
-}
-
-/**
- * --------------------------------------------------------------------------
- * GITHUB CONTRIBUTION SECTION COMPONENT
- * --------------------------------------------------------------------------
- */
 export function GithubSection() {
+  const { data, isLive } = useGitHubContributions();
+  const { weeks, monthLabels, totalContributions, repositories, username } = data;
+
   const [hoveredDay, setHoveredDay] = useState<{
     date: string;
     count: number;
     x: number;
     y: number;
   } | null>(null);
-
-  const { weeks, monthLabels } = useMemo(() => getExactContributionMatrix(), []);
 
   return (
     <section className="relative overflow-hidden py-10 sm:py-14 md:py-16 border-t border-border/50">
@@ -245,25 +47,33 @@ export function GithubSection() {
           </div>
 
           <a
-            href="https://github.com/devCarlJoseph"
+            href={`https://github.com/${username}`}
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-1.5 font-mono text-xs font-semibold tracking-[0.16em] uppercase text-muted-foreground hover:text-foreground transition-colors self-start sm:self-auto"
           >
-            <span>@devCarlJoseph</span>
+            <span>@{username}</span>
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </motion.div>
 
-        {/* GitHub Graph Card matching screenshot */}
+        {/* GitHub Graph Card */}
         <div className="rounded-xl border border-border/80 bg-card p-4 sm:p-6 shadow-sm mb-8">
-          <div className="flex items-center justify-between mb-4 border-b border-border/50 pb-3">
-            <span className="font-sans text-sm sm:text-base font-semibold text-foreground">
-              265 contributions in the last year
-            </span>
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-5 border-b border-border/50 pb-3">
+            <div className="flex items-center gap-2.5">
+              <span className="font-sans text-sm sm:text-base font-semibold text-foreground">
+                {totalContributions} contributions in the last year
+              </span>
+              {isLive && (
+                <span className="inline-flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                  <CheckCircle2 className="h-3 w-3" />
+                  Live
+                </span>
+              )}
+            </div>
 
             <a
-              href="https://github.com/devCarlJoseph"
+              href={`https://github.com/${username}`}
               target="_blank"
               rel="noopener noreferrer"
               className="font-mono text-xs text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-1"
@@ -272,64 +82,78 @@ export function GithubSection() {
             </a>
           </div>
 
-          {/* Clean GitHub Grid Bar with monochrome black/gray palette */}
+          {/* Contribution Grid */}
           <div className="overflow-x-auto pb-2 scrollbar-thin">
-            <div className="w-fit min-w-[680px] select-none mx-auto">
-              {/* Months row */}
-              <div className="flex text-[10px] font-mono text-muted-foreground/80 pl-6 h-4 mb-1 relative">
+            <div className="w-fit min-w-[720px] select-none mx-auto py-1">
+              {/* Month labels */}
+              <div className="relative h-4 mb-1.5 text-[10px] font-mono text-muted-foreground/80 select-none">
                 {monthLabels.map((m, idx) => (
                   <span
                     key={`${m.label}-${idx}`}
-                    style={{
-                      position: "absolute",
-                      left: `calc(24px + ${m.col * 13}px)`,
-                    }}
+                    className="absolute top-0"
+                    style={{ left: `${28 + m.col * 13}px` }}
                   >
                     {m.label}
                   </span>
                 ))}
               </div>
 
-              {/* Grid with Left Day labels */}
-              <div className="flex items-start gap-2">
-                {/* Left labels aligned to Mon (row 1), Wed (row 3), Fri (row 5) */}
-                <div className="flex flex-col justify-between h-[88px] text-[9px] font-mono text-muted-foreground/70 pr-1 select-none">
-                  <span className="h-[10px] leading-[10px]">Mon</span>
-                  <span className="h-[10px] leading-[10px]">Wed</span>
-                  <span className="h-[10px] leading-[10px]">Fri</span>
+              {/* Grid with weekday labels */}
+              <div className="flex items-start">
+                {/* Weekday labels */}
+                <div className="grid grid-rows-7 gap-[3px] h-[88px] text-[9px] font-mono text-muted-foreground/70 select-none w-7 pr-1">
+                  <div className="h-[10px]" />
+                  <div className="h-[10px] leading-[10px] flex items-center">Mon</div>
+                  <div className="h-[10px]" />
+                  <div className="h-[10px] leading-[10px] flex items-center">Wed</div>
+                  <div className="h-[10px]" />
+                  <div className="h-[10px] leading-[10px] flex items-center">Fri</div>
+                  <div className="h-[10px]" />
                 </div>
 
-                {/* 52 Columns Grid */}
+                {/* Week columns */}
                 <div className="flex gap-[3px]">
                   {weeks.map((week, wIdx) => (
-                    <div key={wIdx} className="flex flex-col gap-[3px]">
-                      {week.map((day, dIdx) => (
-                        <div
-                          key={`${wIdx}-${dIdx}`}
-                          onMouseEnter={(e) => {
-                            const rect = e.currentTarget.getBoundingClientRect();
-                            setHoveredDay({
-                              date: day.date,
-                              count: day.count,
-                              x: rect.left + rect.width / 2,
-                              y: rect.top - 8,
-                            });
-                          }}
-                          onMouseLeave={() => setHoveredDay(null)}
-                          className={`h-[10px] w-[10px] rounded-[2px] transition-transform duration-100 hover:scale-125 cursor-pointer ${getMonochromeColor(
-                            day.level
-                          )}`}
-                        />
-                      ))}
+                    <div key={wIdx} className="grid grid-rows-7 gap-[3px]">
+                      {Array.from({ length: 7 }).map((_, weekday) => {
+                        const day = week.find((d) => d.weekday === weekday);
+                        if (!day) {
+                          return (
+                            <div
+                              key={weekday}
+                              className="h-[10px] w-[10px] opacity-0 pointer-events-none"
+                            />
+                          );
+                        }
+
+                        return (
+                          <div
+                            key={weekday}
+                            onMouseEnter={(e) => {
+                              const rect = e.currentTarget.getBoundingClientRect();
+                              setHoveredDay({
+                                date: formatContributionDate(day.date),
+                                count: day.count,
+                                x: rect.left + rect.width / 2,
+                                y: rect.top - 8,
+                              });
+                            }}
+                            onMouseLeave={() => setHoveredDay(null)}
+                            className={`h-[10px] w-[10px] rounded-[2px] transition-transform duration-100 hover:scale-125 cursor-pointer ${getMonochromeColor(
+                              day.level
+                            )}`}
+                          />
+                        );
+                      })}
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Bottom Legend */}
-              <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs text-muted-foreground font-mono text-[10px]">
+              {/* Legend */}
+              <div className="mt-5 pt-3 border-t border-border/40 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground font-mono text-[10px]">
                 <a
-                  href="https://github.com/devCarlJoseph"
+                  href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors inline-flex items-center gap-1"
@@ -338,7 +162,6 @@ export function GithubSection() {
                   <span>Learn how we count contributions</span>
                 </a>
 
-                {/* Black & Gray Legend */}
                 <div className="flex items-center gap-1.5">
                   <span className="text-[10px]">Less</span>
                   <div className="h-[10px] w-[10px] rounded-[2px] bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800" />
@@ -353,7 +176,7 @@ export function GithubSection() {
           </div>
         </div>
 
-        {/* Featured Repositories Grid */}
+        {/* Featured Repositories */}
         <div>
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-base sm:text-lg font-bold tracking-tight text-foreground">
@@ -365,7 +188,7 @@ export function GithubSection() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
-            {PINNED_REPOS.map((repo) => (
+            {repositories.map((repo) => (
               <a
                 key={repo.name}
                 href={repo.url}
@@ -419,7 +242,7 @@ export function GithubSection() {
         </div>
       </div>
 
-      {/* Floating Tooltip */}
+      {/* Tooltip */}
       {hoveredDay && (
         <div
           className="pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-full rounded-md border border-border bg-foreground px-2.5 py-1 text-center font-mono text-[10.5px] font-medium text-background shadow-lg"
@@ -431,9 +254,7 @@ export function GithubSection() {
           <span className="font-bold">
             {hoveredDay.count === 0
               ? "No contributions"
-              : `${hoveredDay.count} contribution${
-                  hoveredDay.count > 1 ? "s" : ""
-                }`}
+              : `${hoveredDay.count} contribution${hoveredDay.count > 1 ? "s" : ""}`}
           </span>{" "}
           on {hoveredDay.date}
         </div>
@@ -443,7 +264,8 @@ export function GithubSection() {
 }
 
 /**
- * Monochrome color palette (Level 0 = light gray, Level 4 = Solid Black/White)
+ * Monochrome black color palette
+ * Level 0 = empty, Level 4 = solid black (light) / solid white (dark)
  */
 function getMonochromeColor(level: number): string {
   switch (level) {
@@ -457,6 +279,6 @@ function getMonochromeColor(level: number): string {
       return "bg-black dark:bg-white";
     case 0:
     default:
-      return "bg-neutral-100 dark:bg-neutral-900 border border-neutral-200/90 dark:border-neutral-800/80";
+      return "bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800";
   }
 }
