@@ -1,12 +1,15 @@
 import { motion } from "motion/react";
+import type { ServiceItem } from "@/components/features/home/types/services";
+
+export interface CompactServiceCardProps {
+  service: ServiceItem;
+  delay?: number;
+}
 
 export function CompactServiceCard({
   service,
-  delay,
-}: {
-  service: ServiceItem;
-  delay: number;
-}) {
+  delay = 0,
+}: CompactServiceCardProps) {
   const Icon = service.icon;
 
   return (
@@ -52,7 +55,7 @@ export function CompactServiceCard({
         {/* Bottom: Tech Tags */}
         <div className="mt-4 pt-3 border-t border-border/60">
           <div className="flex flex-wrap gap-1">
-            {service.stack.map((tech) => (
+            {service.stack.map((tech: string) => (
               <span
                 key={tech}
                 className="inline-flex items-center rounded border border-border/70 bg-muted/30 px-1.5 py-0.5 font-mono text-[9.5px] font-medium text-muted-foreground"

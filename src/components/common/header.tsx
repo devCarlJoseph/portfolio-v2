@@ -22,7 +22,7 @@ export function Header() {
   }, [location.pathname]);
 
   // Lock body scroll when mobile menu is open
-  useEffect(() => {
+  useEffect(() => { 
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {

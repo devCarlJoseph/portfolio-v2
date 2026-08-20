@@ -15,7 +15,7 @@ export function GithubGraphCard() {
   } | null>(null);
 
   return (
-    <div>
+    <div className="relative">
       <div className="rounded-xl border border-border/80 bg-card p-4 sm:p-6 shadow-sm mb-8">
         <div className="flex flex-wrap items-center justify-between gap-2 mb-5 border-b border-border/50 pb-3">
           <div className="flex items-center gap-2.5">
@@ -140,6 +140,24 @@ export function GithubGraphCard() {
           </div>
         </div>
       </div>
+
+      {/* Self-contained Tooltip */}
+      {hoveredDay && (
+        <div
+          className="pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-full rounded-md border border-border bg-foreground px-2.5 py-1 text-center font-mono text-[10.5px] font-medium text-background shadow-lg"
+          style={{
+            left: `${hoveredDay.x}px`,
+            top: `${hoveredDay.y}px`,
+          }}
+        >
+          <span className="font-bold">
+            {hoveredDay.count === 0
+              ? "No contributions"
+              : `${hoveredDay.count} contribution${hoveredDay.count > 1 ? "s" : ""}`}
+          </span>{" "}
+          on {hoveredDay.date}
+        </div>
+      )}
     </div>
   );
 }

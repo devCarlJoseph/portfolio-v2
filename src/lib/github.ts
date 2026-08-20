@@ -8,6 +8,7 @@ import {
 } from "./github-data";
 
 export type { ContributionDay, MonthLabel, RepoItem, GitHubData };
+export type GitHubRepo = RepoItem;
 
 const CACHE_KEY = "portfolio_github_live_v5";
 const CACHE_TTL_MS = 2 * 60 * 1000; // 2 minutes — short TTL so new pushes show quickly

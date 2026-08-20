@@ -174,7 +174,7 @@ const DEFAULT_STUDIO_CONFIG: StudioProjectConfig = {
   },
 };
 
-export function HeroSection() {
+export function HeroSectionView() {
   const [config, setConfig] = useState<StudioProjectConfig>(
     DEFAULT_STUDIO_CONFIG,
   );

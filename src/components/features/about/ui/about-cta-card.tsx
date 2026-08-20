@@ -2,9 +2,9 @@ import { motion } from "motion/react";
 import { ArrowUpRight, MessageSquare, Code2 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-export function AboutCtaSection() {
+export function AboutCtaCard() {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -46,6 +46,6 @@ export function AboutCtaSection() {
           </NavLink>
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 }
