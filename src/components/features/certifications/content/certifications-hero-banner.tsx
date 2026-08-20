@@ -1,34 +1,42 @@
 import { motion } from "motion/react";
 import { Trophy, Award, Code2, Sparkles } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-export function CertificationsHeroSection() {
-  const stats = [
-    {
-      label: "Honors & Distinctions",
-      value: "2 Awards",
-      desc: "Hackathon & Tech Implementation",
-      icon: Trophy,
-    },
-    {
-      label: "Competitive Track",
-      value: "Top 3 Podium",
-      desc: "Mini Hackathon • IT Days",
-      icon: Award,
-    },
-    {
-      label: "Special Distinction",
-      value: "Best in Tech",
-      desc: "Clean Code & Architecture",
-      icon: Code2,
-    },
-    {
-      label: "Verification Status",
-      value: "Verified",
-      desc: "Academic & Panel Evaluated",
-      icon: Sparkles,
-    },
-  ];
+interface HeroStat {
+  label: string;
+  value: string;
+  desc: string;
+  icon: LucideIcon;
+}
 
+const HERO_STATS: HeroStat[] = [
+  {
+    label: "Honors & Distinctions",
+    value: "2 Awards",
+    desc: "Hackathon & Tech Implementation",
+    icon: Trophy,
+  },
+  {
+    label: "Competitive Track",
+    value: "Top 3 Podium",
+    desc: "Mini Hackathon • IT Days",
+    icon: Award,
+  },
+  {
+    label: "Special Distinction",
+    value: "Best in Tech",
+    desc: "Clean Code & Architecture",
+    icon: Code2,
+  },
+  {
+    label: "Verification Status",
+    value: "Verified",
+    desc: "Academic & Panel Evaluated",
+    icon: Sparkles,
+  },
+];
+
+export function CertificationsHeroBanner() {
   return (
     <section className="space-y-8">
       {/* Section Header */}
@@ -61,7 +69,7 @@ export function CertificationsHeroSection() {
         transition={{ duration: 0.45, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
         className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
       >
-        {stats.map((stat, idx) => {
+        {HERO_STATS.map((stat, idx) => {
           const Icon = stat.icon;
           return (
             <div

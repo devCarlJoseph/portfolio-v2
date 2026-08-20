@@ -2,14 +2,14 @@ import { motion } from "motion/react";
 import { NavLink } from "react-router-dom";
 import { ArrowUpRight, Sparkles, FolderGit2 } from "lucide-react";
 
-export function CertificationsCtaSection() {
+export function CertificationCtaCard() {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden rounded-2xl border border-dashed border-border/90 bg-card p-8 sm:p-12"
+      className="relative overflow-hidden rounded-2xl border border-dashed border-border/90 bg-card p-8 sm:p-12 shadow-sm"
     >
       <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
         <div className="max-w-xl space-y-2">
@@ -51,6 +51,6 @@ export function CertificationsCtaSection() {
           </NavLink>
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 }

@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import type { Certification } from "@/data/certifications";
 
-interface CertificationCardProps {
+export interface CertificationCardProps {
   cert: Certification;
   index: number;
   onSelect: (cert: Certification) => void;

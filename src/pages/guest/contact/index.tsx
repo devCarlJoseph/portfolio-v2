@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ProjectScopesSection } from "@/components/features/contact/project-scopes-section";
-import { CollaborationWorkflowSection } from "@/components/features/contact/collaboration-workflow-section";
-import { ContactFormSection } from "@/components/features/contact/contact-form-section";
+import { ProjectScopesSectionView } from "@/components/features/contact/view/project-scopes-section-view";
+import { CollaborationWorkflowSectionView } from "@/components/features/contact/view/collaboration-workflow-section-view";
+import { ContactFormSectionView } from "@/components/features/contact/view/contact-form-section-view";
 
 export default function ContactPage() {
   const [selectedEngagement, setSelectedEngagement] = useState<string>("web-development");
@@ -18,13 +18,13 @@ export default function ContactPage() {
   return (
     <div className="space-y-16 sm:space-y-20 py-4 max-w-6xl mx-auto">
       {/* 01: Project Scopes & Services (Real Deliverables) */}
-      <ProjectScopesSection onSelectScope={handleSelectScope} />
+      <ProjectScopesSectionView onSelectScope={handleSelectScope} />
 
       {/* 02: 4-Step Collaboration Process */}
-      <CollaborationWorkflowSection />
+      <CollaborationWorkflowSectionView />
 
       {/* 03: Direct Inquiry Form & Location Map Card */}
-      <ContactFormSection
+      <ContactFormSectionView
         selectedEngagement={selectedEngagement}
         onEngagementChange={setSelectedEngagement}
       />

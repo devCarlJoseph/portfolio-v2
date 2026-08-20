@@ -8,7 +8,7 @@ export function StudioPreview(props: StudioProps) {
 
   return (
     <div className="lg:col-span-6 xl:col-span-6 w-full flex justify-center lg:justify-end">
-      <div className="w-full max-w-lg rounded-xl border border-neutral-200 bg-white shadow-xl shadow-neutral-900/5 dark:border-neutral-800 dark:bg-neutral-950 overflow-hidden transition-all">
+      <div className="hidden lg:block w-full max-w-lg rounded-xl border border-neutral-200 bg-white shadow-xl shadow-neutral-900/5 dark:border-neutral-800 dark:bg-neutral-950 overflow-hidden transition-all">
         <StudioToolbar {...props} />
         <div className="h-[400px] w-full overflow-hidden flex flex-col justify-between relative">
           {activeMode === "app" ? (

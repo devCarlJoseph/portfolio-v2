@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import type { Certification } from "@/data/certifications";
 
-interface CertificationDetailModalProps {
+export interface CertificationDetailModalProps {
   cert: Certification | null;
   onClose: () => void;
 }

@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import type { Certification } from "@/data/certifications";
 
-interface CertificationMacbookCardProps {
+export interface CertificationMacbookCardProps {
   cert: Certification;
   index: number;
   onSelect: (cert: Certification) => void;

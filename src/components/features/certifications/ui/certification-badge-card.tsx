@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Trophy, Code2, ShieldCheck, Sparkles, ArrowUpRight } from "lucide-react";
 import type { Certification } from "@/data/certifications";
 
-interface CertificationBadgeCardProps {
+export interface CertificationBadgeCardProps {
   cert: Certification;
   index: number;
   onSelect: (cert: Certification) => void;
