@@ -22,8 +22,8 @@ export const ALL_SERVICES: ServicePackage[] = [
     tagline: "Pixel-perfect marketing sites engineered for speed, SEO rank, and turning visitors into paying users.",
     description:
       "A bespoke, responsive single-page or multi-section landing page crafted with modern React/Next.js, fluid animations, OpenGraph social cards, and Google Analytics / Meta Pixel event tracking.",
-    pricePhp: "₱35,000",
-    priceUsd: "$700",
+    pricePhp: "₱----",
+    priceUsd: "$----",
     billingType: "One-time project",
     turnaround: "1 — 2 weeks",
     deliverables: [
@@ -45,8 +45,8 @@ export const ALL_SERVICES: ServicePackage[] = [
     tagline: "End-to-end production web applications with authentication, custom dashboards, database, and payments.",
     description:
       "A complete scalable web platform from prototype to production. Includes full backend architecture, PostgreSQL/Supabase database schemas, role-based access control, secure Stripe payments, and admin dashboards.",
-    pricePhp: "₱95,000",
-    priceUsd: "$1,850",
+    pricePhp: "₱----",
+    priceUsd: "$----",
     billingType: "Milestone-based",
     turnaround: "3 — 5 weeks",
     deliverables: [
@@ -68,8 +68,8 @@ export const ALL_SERVICES: ServicePackage[] = [
     tagline: "Native-performance mobile apps built with React Native and Expo, ready for App Store & Google Play.",
     description:
       "A single high-performance codebase targeting both iOS and Android. Built with offline-first local data caching, push notification infrastructure, native device camera/location integrations, and seamless user onboarding.",
-    pricePhp: "₱120,000",
-    priceUsd: "$2,400",
+    pricePhp: "₱----",
+    priceUsd: "$----",
     billingType: "Milestone-based",
     turnaround: "4 — 6 weeks",
     deliverables: [
@@ -90,8 +90,8 @@ export const ALL_SERVICES: ServicePackage[] = [
     tagline: "Continuous full-stack development, feature roadmap execution, and technical architecture leadership.",
     description:
       "Direct fractional engineering access to build continuous features, refactor legacy code, review PRs, maintain uptime, and provide architectural leadership without the overhead of a full-time hire.",
-    pricePhp: "₱65,000 / mo",
-    priceUsd: "$1,300 / mo",
+    pricePhp: "₱---- / mo",
+    priceUsd: "$---- / mo",
     billingType: "Monthly retainer",
     turnaround: "Continuous sprints",
     deliverables: [
