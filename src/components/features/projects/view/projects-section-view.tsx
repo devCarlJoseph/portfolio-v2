@@ -6,7 +6,7 @@ import { ProjectEmptyState } from "@/components/features/projects/content/projec
 import { ProjectCard } from "@/components/features/projects/ui/project-card";
 import { ProjectListRow } from "@/components/features/projects/ui/project-list-row";
 import { ProjectDetailModal } from "@/components/features/projects/ui/project-detail-modal";
-import { AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 
 export function ProjectsSectionView() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,7 +49,7 @@ export function ProjectsSectionView() {
   };
 
   return (
-    <div className="space-y-10 sm:space-y-12">
+    <div className="space-y-10 sm:space-y-12 pb-10 sm:pb-14">
       {/* Page Header and Filtering controls */}
       <section className="space-y-8" aria-label="Projects header and filters">
         <ProjectHeroHeader />
@@ -74,31 +74,39 @@ export function ProjectsSectionView() {
             onResetFilters={handleResetFilters}
           />
         ) : viewMode === "grid" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  project={project}
-                  index={index}
-                  onSelect={setActiveModalProject}
-                />
-              ))}
-            </AnimatePresence>
-          </div>
+          <motion.div
+            key={`grid-${selectedCategory}-${searchQuery}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7"
+          >
+            {filteredProjects.map((project, index) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                onSelect={setActiveModalProject}
+              />
+            ))}
+          </motion.div>
         ) : (
-          <div className="space-y-3">
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project, index) => (
-                <ProjectListRow
-                  key={project.id}
-                  project={project}
-                  index={index}
-                  onSelect={setActiveModalProject}
-                />
-              ))}
-            </AnimatePresence>
-          </div>
+          <motion.div
+            key={`list-${selectedCategory}-${searchQuery}`}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="space-y-3"
+          >
+            {filteredProjects.map((project, index) => (
+              <ProjectListRow
+                key={project.id}
+                project={project}
+                index={index}
+                onSelect={setActiveModalProject}
+              />
+            ))}
+          </motion.div>
         )}
       </section>
 

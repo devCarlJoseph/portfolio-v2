@@ -3,9 +3,11 @@ import { AboutExperienceHeader } from "@/components/features/about/content/about
 
 export function AboutExperienceSectionView() {
   return (
-    <section className="space-y-8">
+    <section className="space-y-8 py-10 sm:py-14 border-t border-border/50">
       <AboutExperienceHeader />
       <ExperienceTimelineContainer />
     </section>
   );
 }
+
+export default AboutExperienceSectionView;

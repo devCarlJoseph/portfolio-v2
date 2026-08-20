@@ -6,12 +6,12 @@ import { AboutCtaSectionView } from "@/components/features/about/view/about-cta-
 
 export default function AboutPage() {
   return (
-    <div className="space-y-12 sm:space-y-16 py-4">
+    <>
       <AboutHeroSectionView />
       <AboutExperienceSectionView />
       <AboutTechStackSectionView />
       <AboutEducationSectionView />
       <AboutCtaSectionView />
-    </div>
+    </>
   );
 }

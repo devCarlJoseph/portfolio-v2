@@ -4,7 +4,8 @@ import { CollaborationWorkflowSectionView } from "@/components/features/contact/
 import { ContactFormSectionView } from "@/components/features/contact/view/contact-form-section-view";
 
 export default function ContactPage() {
-  const [selectedEngagement, setSelectedEngagement] = useState<string>("web-development");
+  const [selectedEngagement, setSelectedEngagement] =
+    useState<string>("web-development");
 
   const handleSelectScope = (scopeId: string) => {
     setSelectedEngagement(scopeId);
@@ -16,18 +17,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="space-y-16 sm:space-y-20 py-4 max-w-6xl mx-auto">
-      {/* 01: Project Scopes & Services (Real Deliverables) */}
+    <>
       <ProjectScopesSectionView onSelectScope={handleSelectScope} />
-
-      {/* 02: 4-Step Collaboration Process */}
       <CollaborationWorkflowSectionView />
-
-      {/* 03: Direct Inquiry Form & Location Map Card */}
       <ContactFormSectionView
         selectedEngagement={selectedEngagement}
         onEngagementChange={setSelectedEngagement}
       />
-    </div>
+    </>
   );
 }

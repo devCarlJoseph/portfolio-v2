@@ -14,7 +14,7 @@ export function ServicesPricingSectionView({
   onCurrencyChange,
 }: ServicesPricingSectionViewProps) {
   return (
-    <section className="space-y-6 sm:space-y-8">
+    <section className="space-y-6 sm:space-y-8 max-w-6xl mx-auto pb-10 sm:pb-14">
       {/* Top Section Header & Currency Toggle */}
       <motion.div
         initial={{ opacity: 0, y: 14 }}

@@ -16,7 +16,7 @@ export function AboutTechStackSectionView() {
   }, [activeCategory]);
 
   return (
-    <section className="space-y-8">
+    <section className="space-y-8 py-10 sm:py-14 border-t border-border/50">
       <AboutTechStackHeader />
       <AboutTechStackFilters
         activeCategory={activeCategory}
@@ -26,3 +26,5 @@ export function AboutTechStackSectionView() {
     </section>
   );
 }
+
+export default AboutTechStackSectionView;

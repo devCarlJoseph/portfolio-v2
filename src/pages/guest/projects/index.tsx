@@ -3,9 +3,9 @@ import { ProjectsCtaSectionView } from "@/components/features/projects/view/proj
 
 export default function ProjectsPage() {
   return (
-    <div className="space-y-12 sm:space-y-16 py-4">
+    <>
       <ProjectsSectionView />
       <ProjectsCtaSectionView />
-    </div>
+    </>
   );
 }

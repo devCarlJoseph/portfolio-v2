@@ -1,3 +1,4 @@
+import type { IconName } from "tech-stack-icons";
 import {
   Code2,
   Server,
@@ -6,37 +7,12 @@ import {
   Cpu,
   Layers,
 } from "lucide-react";
-import {
-  ReactIcon,
-  NextjsIcon,
-  TypeScriptIcon,
-  JavaScriptIcon,
-  TailwindIcon,
-  NodejsIcon,
-  PostgresIcon,
-  SupabaseIcon,
-  PrismaIcon,
-  LaravelIcon,
-  ReactNativeIcon,
-  DockerIcon,
-  GitIcon,
-  VercelIcon,
-  ViteIcon,
-  PythonIcon,
-  RedisIcon,
-  MongoIcon,
-  StripeIcon,
-  FigmaIcon,
-  AstroIcon,
-  VueIcon,
-  GraphQLIcon,
-} from "@/components/common/tech-icons";
 
 export interface TechItem {
   name: string;
   category: "Frontend" | "Backend" | "Databases" | "Mobile" | "DevOps & Tools";
   level: "Expert" | "Advanced" | "Proficient";
-  icon: React.ComponentType<{ size?: number; className?: string }>;
+  iconName: IconName;
   description: string;
   highlight?: boolean;
 }
@@ -58,7 +34,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "React 19",
     category: "Frontend",
     level: "Expert",
-    icon: ReactIcon,
+    iconName: "react",
     description:
       "Component architecture, custom hooks, Server Actions, concurrent rendering.",
     highlight: true,
@@ -67,7 +43,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Next.js",
     category: "Frontend",
     level: "Advanced",
-    icon: NextjsIcon,
+    iconName: "nextjs2",
     description:
       "App Router, SSR, SSG, Edge middleware, image & font optimization.",
     highlight: true,
@@ -76,7 +52,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "TypeScript",
     category: "Frontend",
     level: "Advanced",
-    icon: TypeScriptIcon,
+    iconName: "typescript",
     description:
       "Strict typing, generics, schema inference with Zod, end-to-end safety.",
     highlight: true,
@@ -85,7 +61,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Tailwind CSS",
     category: "Frontend",
     level: "Expert",
-    icon: TailwindIcon,
+    iconName: "tailwindcss",
     description:
       "Modern utility styling, design token systems, dark/light themes.",
     highlight: true,
@@ -94,7 +70,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "JavaScript (ES6+)",
     category: "Frontend",
     level: "Expert",
-    icon: JavaScriptIcon,
+    iconName: "js",
     description:
       "Modern asynchronous workflows, event loop, DOM APIs, functional methods.",
   },
@@ -102,7 +78,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Vue.js",
     category: "Frontend",
     level: "Proficient",
-    icon: VueIcon,
+    iconName: "vuejs",
     description:
       "Composition API, reactive stores, modular single-file components.",
   },
@@ -110,7 +86,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Astro",
     category: "Frontend",
     level: "Proficient",
-    icon: AstroIcon,
+    iconName: "astro",
     description:
       "Content collections, zero-JS island hydration, markdown architecture.",
   },
@@ -120,7 +96,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Node.js",
     category: "Backend",
     level: "Advanced",
-    icon: NodejsIcon,
+    iconName: "nodejs",
     description:
       "High-concurrency backend services, streaming IO, runtime worker processes.",
     highlight: true,
@@ -129,7 +105,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Laravel",
     category: "Backend",
     level: "Advanced",
-    icon: LaravelIcon,
+    iconName: "laravel",
     description:
       "Robust PHP framework, Eloquent ORM, queue workers, MVC architecture.",
     highlight: true,
@@ -138,7 +114,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Python",
     category: "Backend",
     level: "Proficient",
-    icon: PythonIcon,
+    iconName: "python",
     description:
       "Automation scripting, LLM integration, data extraction, fast prototyping.",
   },
@@ -146,7 +122,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "GraphQL",
     category: "Backend",
     level: "Proficient",
-    icon: GraphQLIcon,
+    iconName: "graphql",
     description:
       "Declarative schema modeling, resolvers, query batching & mutations.",
   },
@@ -154,7 +130,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Stripe APIs",
     category: "Backend",
     level: "Advanced",
-    icon: StripeIcon,
+    iconName: "stripe",
     description:
       "Elements checkout, customer portal, webhook fulfillment, subscriptions.",
     highlight: true,
@@ -165,7 +141,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "PostgreSQL",
     category: "Databases",
     level: "Advanced",
-    icon: PostgresIcon,
+    iconName: "postgresql",
     description:
       "ACID compliance, complex relational modeling, indexes, JSONB queries.",
     highlight: true,
@@ -174,7 +150,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Supabase",
     category: "Databases",
     level: "Advanced",
-    icon: SupabaseIcon,
+    iconName: "supabase",
     description:
       "Postgres database, Row Level Security (RLS), auth tokens, live sync.",
     highlight: true,
@@ -183,7 +159,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Prisma ORM",
     category: "Databases",
     level: "Advanced",
-    icon: PrismaIcon,
+    iconName: "prisma",
     description:
       "Type-safe database client, schema migrations, relational joins.",
   },
@@ -191,7 +167,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Redis",
     category: "Databases",
     level: "Proficient",
-    icon: RedisIcon,
+    iconName: "redis",
     description:
       "In-memory caching, rate limit counters, session stores, low-latency queues.",
   },
@@ -199,7 +175,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "MongoDB",
     category: "Databases",
     level: "Proficient",
-    icon: MongoIcon,
+    iconName: "mongodb",
     description:
       "Document storage, aggregation pipelines, flexible unstructured schemas.",
   },
@@ -209,7 +185,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "React Native",
     category: "Mobile",
     level: "Advanced",
-    icon: ReactNativeIcon,
+    iconName: "reactnative",
     description:
       "Cross-platform mobile apps for iOS and Android with native performance.",
     highlight: true,
@@ -218,7 +194,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Expo & EAS",
     category: "Mobile",
     level: "Advanced",
-    icon: ReactNativeIcon,
+    iconName: "expo",
     description:
       "Managed workflows, OTA updates, custom development clients, EAS builds.",
   },
@@ -228,7 +204,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Docker",
     category: "DevOps & Tools",
     level: "Proficient",
-    icon: DockerIcon,
+    iconName: "docker",
     description:
       "Containerized environments, multi-stage builds, Docker Compose networks.",
   },
@@ -236,7 +212,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Git & GitHub",
     category: "DevOps & Tools",
     level: "Advanced",
-    icon: GitIcon,
+    iconName: "git",
     description:
       "Branching strategies, pull request reviews, CI/CD automated actions.",
     highlight: true,
@@ -245,7 +221,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Vite",
     category: "DevOps & Tools",
     level: "Advanced",
-    icon: ViteIcon,
+    iconName: "vitejs",
     description:
       "Lightning-fast HMR, Rollup bundling, plugin ecosystem integration.",
   },
@@ -253,7 +229,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Vercel",
     category: "DevOps & Tools",
     level: "Advanced",
-    icon: VercelIcon,
+    iconName: "vercel",
     description:
       "Edge networks, serverless functions, automatic preview deployments.",
   },
@@ -261,7 +237,7 @@ export const ALL_TECH_STACK: TechItem[] = [
     name: "Figma",
     category: "DevOps & Tools",
     level: "Expert",
-    icon: FigmaIcon,
+    iconName: "figma",
     description:
       "UI/UX component systems, token extraction, pixel-perfect translation.",
   },
