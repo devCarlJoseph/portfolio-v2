@@ -2,7 +2,7 @@ import { ArrowUpRight, Code2, Info } from "lucide-react";
 import { motion } from "motion/react";
 import { type ProjectItem } from "@/data/projects";
 
-interface ProjectListRowProps {
+export interface ProjectListRowProps {
   project: ProjectItem;
   index: number;
   onSelect: (project: ProjectItem) => void;

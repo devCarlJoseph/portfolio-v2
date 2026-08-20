@@ -2,7 +2,7 @@ import { ArrowUpRight, Code, Info, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
 import { type ProjectItem } from "@/data/projects";
 
-interface ProjectCardProps {
+export interface ProjectCardProps {
   project: ProjectItem;
   index: number;
   onSelect: (project: ProjectItem) => void;

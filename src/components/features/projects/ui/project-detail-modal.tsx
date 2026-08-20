@@ -14,7 +14,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { type ProjectItem } from "@/data/projects";
 import { NavLink } from "react-router-dom";
 
-interface ProjectDetailModalProps {
+export interface ProjectDetailModalProps {
   project: ProjectItem | null;
   onClose: () => void;
 }

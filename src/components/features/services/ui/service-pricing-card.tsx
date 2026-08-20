@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Check, ArrowUpRight, Sparkles } from "lucide-react";
 import type { ServicePackage } from "@/data/services";
 
-interface ServicePricingCardProps {
+export interface ServicePricingCardProps {
   service: ServicePackage;
   currency: "PHP" | "USD";
   index: number;
@@ -59,7 +59,7 @@ export function ServicePricingCard({
         )}
       </div>
 
-      {/* ── Card Body (Compact & Scannable) ── */}
+      {/* ── Card Body ── */}
       <div className="p-5 sm:p-6 space-y-4">
         {/* Title & Badge */}
         <div className="space-y-1">
@@ -93,7 +93,7 @@ export function ServicePricingCard({
           </span>
         </div>
 
-        {/* Deliverables (Curated Top 4 for Quick Scanning) */}
+        {/* Deliverables */}
         <div className="space-y-1.5 pt-1">
           <ul className="space-y-1.5">
             {service.deliverables.slice(0, 4).map((item, dIdx) => (

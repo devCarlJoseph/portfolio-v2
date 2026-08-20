@@ -2,9 +2,9 @@ import { motion } from "motion/react";
 import { NavLink } from "react-router-dom";
 import { Sparkles, FolderGit2, ArrowUpRight } from "lucide-react";
 
-export function ServicesCtaBanner() {
+export function ServiceCtaCard() {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -51,6 +51,6 @@ export function ServicesCtaBanner() {
           </NavLink>
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 }

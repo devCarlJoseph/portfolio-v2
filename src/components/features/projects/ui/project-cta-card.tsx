@@ -2,9 +2,9 @@ import { ArrowUpRight, Code2, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import { NavLink } from "react-router-dom";
 
-export function ProjectCtaBanner() {
+export function ProjectCtaCard() {
   return (
-    <motion.section
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -29,7 +29,7 @@ export function ProjectCtaBanner() {
 
         <div className="flex flex-wrap items-center gap-3 shrink-0">
           <a
-            href="https://github.com"
+            href="https://github.com/devCarlJoseph"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-muted/40 px-4 py-2.5 text-xs font-semibold text-foreground transition-all hover:bg-muted active:scale-95"
@@ -48,6 +48,6 @@ export function ProjectCtaBanner() {
           </NavLink>
         </div>
       </div>
-    </motion.section>
+    </motion.div>
   );
 }
