@@ -2,243 +2,382 @@ import type { IconName } from "tech-stack-icons";
 import {
   Code2,
   Server,
-  Database,
-  Smartphone,
-  Cpu,
-  Layers,
+  Cloud,
+  Bot,
+  Wrench,
 } from "lucide-react";
 
 export interface TechItem {
   name: string;
-  category: "Frontend" | "Backend" | "Databases" | "Mobile" | "DevOps & Tools";
+  category:
+    | "Front End"
+    | "Back End"
+    | "Devops & Cloud"
+    | "AI & Machine Learning"
+    | "Developer Tools";
   level: "Expert" | "Advanced" | "Proficient";
   iconName: IconName;
+  variant?: "light" | "dark" | "grayscale";
   description: string;
   highlight?: boolean;
 }
 
 export const CATEGORIES = [
-  { id: "All", label: "All Tech", icon: Layers },
-  { id: "Frontend", label: "Frontend", icon: Code2 },
-  { id: "Backend", label: "Backend & APIs", icon: Server },
-  { id: "Databases", label: "Databases & Cloud", icon: Database },
-  { id: "Mobile", label: "Mobile Apps", icon: Smartphone },
-  { id: "DevOps & Tools", label: "DevOps & Tools", icon: Cpu },
+  { id: "Front End", label: "Front End", icon: Code2 },
+  { id: "Back End", label: "Back End", icon: Server },
+  { id: "Devops & Cloud", label: "Devops & Cloud", icon: Cloud },
+  { id: "AI & Machine Learning", label: "AI & Machine Learning", icon: Bot },
+  { id: "Developer Tools", label: "Developer Tools", icon: Wrench },
 ] as const;
 
 export type CategoryFilter = (typeof CATEGORIES)[number]["id"];
 
 export const ALL_TECH_STACK: TechItem[] = [
-  // Frontend
+  // Front End
   {
-    name: "React 19",
-    category: "Frontend",
+    name: "JavaScript",
+    category: "Front End",
     level: "Expert",
-    iconName: "react",
+    iconName: "js",
     description:
-      "Component architecture, custom hooks, Server Actions, concurrent rendering.",
-    highlight: true,
-  },
-  {
-    name: "Next.js",
-    category: "Frontend",
-    level: "Advanced",
-    iconName: "nextjs2",
-    description:
-      "App Router, SSR, SSG, Edge middleware, image & font optimization.",
+      "ES6+ syntax, asynchronous programming, DOM APIs, and modern client-side scripting.",
     highlight: true,
   },
   {
     name: "TypeScript",
-    category: "Frontend",
+    category: "Front End",
     level: "Advanced",
     iconName: "typescript",
     description:
-      "Strict typing, generics, schema inference with Zod, end-to-end safety.",
+      "Strict static typing, interfaces, generics, and type-safe frontend workflows.",
+    highlight: true,
+  },
+  {
+    name: "React",
+    category: "Front End",
+    level: "Expert",
+    iconName: "react",
+    description:
+      "Component architecture, custom hooks, state management, and modern UI rendering.",
+    highlight: true,
+  },
+  {
+    name: "Next.js",
+    category: "Front End",
+    level: "Advanced",
+    iconName: "nextjs2",
+    description:
+      "Fullstack React framework, App Router, SSR, SSG, and edge performance optimization.",
     highlight: true,
   },
   {
     name: "Tailwind CSS",
-    category: "Frontend",
+    category: "Front End",
     level: "Expert",
     iconName: "tailwindcss",
     description:
-      "Modern utility styling, design token systems, dark/light themes.",
+      "Utility-first CSS styling, responsive layout design, and design token customization.",
     highlight: true,
   },
   {
-    name: "JavaScript (ES6+)",
-    category: "Frontend",
-    level: "Expert",
-    iconName: "js",
+    name: "Bootstrap",
+    category: "Front End",
+    level: "Advanced",
+    iconName: "bootstrap5",
     description:
-      "Modern asynchronous workflows, event loop, DOM APIs, functional methods.",
+      "Responsive grid layout systems, pre-styled components, and rapid UI prototyping.",
   },
   {
-    name: "Vue.js",
-    category: "Frontend",
-    level: "Proficient",
-    iconName: "vuejs",
+    name: "Vite",
+    category: "Front End",
+    level: "Advanced",
+    iconName: "vitejs",
     description:
-      "Composition API, reactive stores, modular single-file components.",
+      "Lightning-fast frontend build tooling, instant HMR, and Rollup production bundling.",
   },
   {
-    name: "Astro",
-    category: "Frontend",
-    level: "Proficient",
-    iconName: "astro",
+    name: "Styled Components",
+    category: "Front End",
+    level: "Advanced",
+    iconName: "styledcomponents",
     description:
-      "Content collections, zero-JS island hydration, markdown architecture.",
+      "CSS-in-JS component styling, dynamic theme support, and scoped style isolation.",
+  },
+  {
+    name: "ESLint",
+    category: "Front End",
+    level: "Advanced",
+    iconName: "eslint",
+    description:
+      "Static code analysis, syntax error detection, and code consistency enforcement.",
+  },
+  {
+    name: "Prettier",
+    category: "Front End",
+    level: "Advanced",
+    iconName: "prettier",
+    description:
+      "Opinionated code formatting, consistent indentation, and uniform codebase style.",
   },
 
-  // Backend & APIs
+  // Back End
   {
     name: "Node.js",
-    category: "Backend",
+    category: "Back End",
     level: "Advanced",
     iconName: "nodejs",
     description:
-      "High-concurrency backend services, streaming IO, runtime worker processes.",
+      "Event-driven asynchronous JavaScript runtime for high-concurrency backend services.",
+    highlight: true,
+  },
+  {
+    name: "Express.js",
+    category: "Back End",
+    level: "Advanced",
+    iconName: "expressjs",
+    description:
+      "Fast, unopinionated, minimalist web framework for building robust Node.js REST APIs.",
     highlight: true,
   },
   {
     name: "Laravel",
-    category: "Backend",
+    category: "Back End",
     level: "Advanced",
     iconName: "laravel",
     description:
-      "Robust PHP framework, Eloquent ORM, queue workers, MVC architecture.",
+      "Robust PHP framework with Eloquent ORM, MVC architecture, routing, and queue workers.",
     highlight: true,
   },
   {
-    name: "Python",
-    category: "Backend",
-    level: "Proficient",
-    iconName: "python",
-    description:
-      "Automation scripting, LLM integration, data extraction, fast prototyping.",
-  },
-  {
-    name: "GraphQL",
-    category: "Backend",
-    level: "Proficient",
-    iconName: "graphql",
-    description:
-      "Declarative schema modeling, resolvers, query batching & mutations.",
-  },
-  {
-    name: "Stripe APIs",
-    category: "Backend",
+    name: "PHP",
+    category: "Back End",
     level: "Advanced",
-    iconName: "stripe",
+    iconName: "php",
     description:
-      "Elements checkout, customer portal, webhook fulfillment, subscriptions.",
-    highlight: true,
+      "Server-side scripting language for dynamic web development and backend business logic.",
   },
-
-  // Databases & Storage
   {
     name: "PostgreSQL",
-    category: "Databases",
+    category: "Back End",
     level: "Advanced",
     iconName: "postgresql",
     description:
-      "ACID compliance, complex relational modeling, indexes, JSONB queries.",
+      "Enterprise relational database with ACID compliance, JSONB support, and complex querying.",
     highlight: true,
   },
   {
+    name: "MySQL",
+    category: "Back End",
+    level: "Advanced",
+    iconName: "mysql",
+    description:
+      "Open-source relational database management system for structured data storage.",
+  },
+  {
     name: "Supabase",
-    category: "Databases",
+    category: "Back End",
     level: "Advanced",
     iconName: "supabase",
     description:
-      "Postgres database, Row Level Security (RLS), auth tokens, live sync.",
+      "Open-source Firebase alternative featuring Postgres database, Auth tokens, and real-time APIs.",
     highlight: true,
   },
   {
     name: "Prisma ORM",
-    category: "Databases",
+    category: "Back End",
     level: "Advanced",
     iconName: "prisma",
     description:
-      "Type-safe database client, schema migrations, relational joins.",
-  },
-  {
-    name: "Redis",
-    category: "Databases",
-    level: "Proficient",
-    iconName: "redis",
-    description:
-      "In-memory caching, rate limit counters, session stores, low-latency queues.",
-  },
-  {
-    name: "MongoDB",
-    category: "Databases",
-    level: "Proficient",
-    iconName: "mongodb",
-    description:
-      "Document storage, aggregation pipelines, flexible unstructured schemas.",
-  },
-
-  // Mobile
-  {
-    name: "React Native",
-    category: "Mobile",
-    level: "Advanced",
-    iconName: "reactnative",
-    description:
-      "Cross-platform mobile apps for iOS and Android with native performance.",
+      "Next-generation Node.js and TypeScript ORM for type-safe database access, relations, and schema migrations.",
     highlight: true,
   },
   {
-    name: "Expo & EAS",
-    category: "Mobile",
-    level: "Advanced",
-    iconName: "expo",
+    name: "REST APIs",
+    category: "Back End",
+    level: "Expert",
+    iconName: "openapi",
     description:
-      "Managed workflows, OTA updates, custom development clients, EAS builds.",
+      "RESTful API architecture design, stateless endpoints, error handling, and JSON payloads.",
+    highlight: true,
+  },
+  {
+    name: "OAuth",
+    category: "Back End",
+    level: "Advanced",
+    iconName: "oauth",
+    description:
+      "Industry-standard authorization protocol for secure third-party login and delegated access.",
+  },
+  {
+    name: "JWT",
+    category: "Back End",
+    level: "Advanced",
+    iconName: "json",
+    description:
+      "JSON Web Tokens for stateless authentication, session security, and token verification.",
   },
 
-  // DevOps & Tools
+  // Devops & Cloud
   {
     name: "Docker",
-    category: "DevOps & Tools",
+    category: "Devops & Cloud",
     level: "Proficient",
     iconName: "docker",
     description:
-      "Containerized environments, multi-stage builds, Docker Compose networks.",
-  },
-  {
-    name: "Git & GitHub",
-    category: "DevOps & Tools",
-    level: "Advanced",
-    iconName: "git",
-    description:
-      "Branching strategies, pull request reviews, CI/CD automated actions.",
+      "Containerization, multi-stage Dockerfiles, Docker Compose networking, and isolated environments.",
     highlight: true,
   },
   {
-    name: "Vite",
-    category: "DevOps & Tools",
+    name: "GitHub Actions",
+    category: "Devops & Cloud",
     level: "Advanced",
-    iconName: "vitejs",
+    iconName: "github",
     description:
-      "Lightning-fast HMR, Rollup bundling, plugin ecosystem integration.",
+      "Automated CI/CD workflows, continuous integration, test execution, and deployment pipelines.",
+    highlight: true,
+  },
+  {
+    name: "Railway",
+    category: "Devops & Cloud",
+    level: "Advanced",
+    iconName: "railway",
+    description:
+      "Infrastructure platform with zero-configuration deployments, automated provisioning, and environments.",
+    highlight: true,
   },
   {
     name: "Vercel",
-    category: "DevOps & Tools",
+    category: "Devops & Cloud",
     level: "Advanced",
     iconName: "vercel",
     description:
-      "Edge networks, serverless functions, automatic preview deployments.",
+      "Frontend cloud platform for seamless Next.js hosting, serverless functions, and global edge network.",
+    highlight: true,
+  },
+
+  // AI & Machine Learning
+  {
+    name: "OpenAI",
+    category: "AI & Machine Learning",
+    level: "Advanced",
+    iconName: "openai",
+    description:
+      "GPT models integration, prompt engineering, structured outputs, embeddings, and Function Calling.",
+    highlight: true,
+  },
+  {
+    name: "Gemini",
+    category: "AI & Machine Learning",
+    level: "Advanced",
+    iconName: "gemini",
+    description:
+      "Google multimodal AI integration, long-context reasoning, structured outputs, and API tooling.",
+    highlight: true,
+  },
+  {
+    name: "Gemma Opensource",
+    category: "AI & Machine Learning",
+    level: "Proficient",
+    iconName: "gemma",
+    description:
+      "Lightweight, state-of-the-art open models from Google for local inference and specialized fine-tuning.",
+    highlight: true,
+  },
+  {
+    name: "Codex",
+    category: "AI & Machine Learning",
+    level: "Advanced",
+    iconName: "openai",
+    description:
+      "AI-assisted code generation, automated refactoring, pattern recognition, and semantic analysis.",
+  },
+
+  // Developer Tools
+  {
+    name: "Git",
+    category: "Developer Tools",
+    level: "Advanced",
+    iconName: "git",
+    description:
+      "Distributed version control, branch management, merge conflict resolution, and commit history.",
+    highlight: true,
+  },
+  {
+    name: "GitHub",
+    category: "Developer Tools",
+    level: "Advanced",
+    iconName: "github",
+    description:
+      "Code repository hosting, pull request code reviews, issue tracking, and collaborative development.",
+    highlight: true,
+  },
+  {
+    name: "VS Code",
+    category: "Developer Tools",
+    level: "Expert",
+    iconName: "vscode",
+    description:
+      "Primary code editor with rich extensions ecosystem, debugger configuration, and productivity tooling.",
+    highlight: true,
+  },
+  {
+    name: "Postman",
+    category: "Developer Tools",
+    level: "Advanced",
+    iconName: "postman",
+    description:
+      "API platform for building, testing, documenting, and automating REST API endpoints.",
+    highlight: true,
+  },
+  {
+    name: "Antigravity IDE",
+    category: "Developer Tools",
+    level: "Expert",
+    iconName: "antigravity",
+    description:
+      "Agentic AI development environment for pairs programming, advanced coding tasks, and automation.",
+    highlight: true,
+  },
+  {
+    name: "Cursor",
+    category: "Developer Tools",
+    level: "Advanced",
+    iconName: "cursor",
+    description:
+      "AI-native code editor with inline code generation, contextual repository indexing, and chat.",
+    highlight: true,
   },
   {
     name: "Figma",
-    category: "DevOps & Tools",
-    level: "Expert",
+    category: "Developer Tools",
+    level: "Advanced",
     iconName: "figma",
     description:
-      "UI/UX component systems, token extraction, pixel-perfect translation.",
+      "Collaborative interface design, interactive UI prototyping, wireframing, and design system tokens.",
+    highlight: true,
+  },
+  {
+    name: "Photoshop",
+    category: "Developer Tools",
+    level: "Advanced",
+    iconName: "photoshop",
+    description:
+      "Raster graphics editing, photo manipulation, visual asset preparation, and graphic design.",
+  },
+  {
+    name: "Canva",
+    category: "Developer Tools",
+    level: "Expert",
+    iconName: "canva",
+    description:
+      "Visual content creation, marketing graphic design, social media assets, and presentation layouts.",
+  },
+  {
+    name: "Discord",
+    category: "Developer Tools",
+    level: "Proficient",
+    iconName: "slack",
+    description:
+      "Developer community engagement, real-time team communication, and webhook integrations.",
   },
 ];

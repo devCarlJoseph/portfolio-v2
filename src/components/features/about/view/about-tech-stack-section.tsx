@@ -8,10 +8,10 @@ import { AboutTechStackFilters } from "@/components/features/about/ui/about-tech
 import { AboutTechStackGrid } from "@/components/features/about/ui/about-tech-stack-grid";
 
 export function AboutTechStackSectionView() {
-  const [activeCategory, setActiveCategory] = useState<CategoryFilter>("All");
+  const [activeCategory, setActiveCategory] =
+    useState<CategoryFilter>("Front End");
 
   const filteredTech = useMemo(() => {
-    if (activeCategory === "All") return ALL_TECH_STACK;
     return ALL_TECH_STACK.filter((tech) => tech.category === activeCategory);
   }, [activeCategory]);
 

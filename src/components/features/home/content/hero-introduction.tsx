@@ -4,9 +4,9 @@ import { buttonVariants } from "@/components/ui/button";
 
 export function HeroIntroduction() {
   return (
-    <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center">
+    <div className="lg:col-span-6 xl:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left justify-center">
       {/* Availability & Location Badge */}
-      <div className="mb-4 inline-flex items-center gap-2 self-start rounded-full border border-neutral-200 bg-neutral-50/80 px-3.5 py-1 text-xs dark:border-neutral-800 dark:bg-neutral-900/70">
+      <div className="mb-4 inline-flex items-center gap-2 self-center lg:self-start rounded-full border border-neutral-200 bg-neutral-50/80 px-3.5 py-1 text-xs dark:border-neutral-800 dark:bg-neutral-900/70 shadow-xs">
         <span className="relative flex h-2 w-2">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
           <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -31,14 +31,14 @@ export function HeroIntroduction() {
       </h1>
 
       {/* Bio Description */}
-      <p className="mt-4 text-base sm:text-lg leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-xl">
+      <p className="mt-4 text-base sm:text-lg leading-relaxed text-neutral-600 dark:text-neutral-300 max-w-xl mx-auto lg:mx-0">
         I help founders, businesses, and startups build and ship custom web
         applications, high-converting storefronts, and reliable SaaS platforms
         with speed and maintainability.
       </p>
 
       {/* Social Links Row */}
-      <div className="mt-5 flex flex-wrap items-center gap-5 sm:gap-6 font-mono text-xs sm:text-[13px]">
+      <div className="mt-5 flex flex-wrap items-center justify-center lg:justify-start gap-5 sm:gap-6 font-mono text-xs sm:text-[13px]">
         <a
           href="https://github.com"
           target="_blank"
@@ -71,7 +71,7 @@ export function HeroIntroduction() {
       </div>
 
       {/* Action Buttons */}
-      <div className="mt-7 flex flex-wrap items-center gap-3">
+      <div className="mt-7 flex flex-wrap items-center justify-center lg:justify-start gap-3">
         <NavLink
           to="/projects"
           className={buttonVariants({

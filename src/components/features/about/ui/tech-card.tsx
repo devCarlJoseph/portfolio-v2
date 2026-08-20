@@ -1,6 +1,7 @@
 import { Sparkles } from "lucide-react";
 import StackIcon from "tech-stack-icons";
 import type { TechItem } from "@/components/features/about/types/tech-stack";
+import { useIsDarkMode } from "@/lib/use-theme";
 
 export interface TechCardProps {
   tech: TechItem;
@@ -8,13 +9,20 @@ export interface TechCardProps {
 }
 
 export function TechCard({ tech }: TechCardProps) {
+  const isDark = useIsDarkMode();
+  const iconVariant = tech.variant || (isDark ? "dark" : "light");
+
   return (
     <div className="group relative flex flex-col justify-between rounded-2xl border border-dashed border-border/90 bg-card p-5 transition-all duration-200 hover:border-foreground/40 hover:shadow-md dark:hover:shadow-neutral-950/60">
       <div>
         {/* Card Header with Logo Icon & Level Badge */}
         <div className="flex items-start justify-between gap-3 mb-3.5">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/80 bg-muted/40 p-2.5 transition-transform duration-300 group-hover:scale-110 shadow-xs">
-            <StackIcon name={tech.iconName} className="h-7 w-7 shrink-0" />
+            <StackIcon
+              name={tech.iconName}
+              variant={iconVariant}
+              className="h-7 w-7 shrink-0"
+            />
           </div>
 
           <div className="flex flex-col items-end gap-1">

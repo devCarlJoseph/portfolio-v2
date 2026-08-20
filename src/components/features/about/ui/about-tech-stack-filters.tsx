@@ -18,10 +18,7 @@ export function AboutTechStackFilters({
       {CATEGORIES.map((cat) => {
         const Icon = cat.icon;
         const isActive = activeCategory === cat.id;
-        const count =
-          cat.id === "All"
-            ? ALL_TECH_STACK.length
-            : ALL_TECH_STACK.filter((t) => t.category === cat.id).length;
+        const count = ALL_TECH_STACK.filter((t) => t.category === cat.id).length;
 
         return (
           <button

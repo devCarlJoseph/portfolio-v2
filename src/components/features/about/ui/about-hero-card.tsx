@@ -71,7 +71,7 @@ export function AboutHeroCard() {
 
         {/* Narrative & Bio Column */}
         <div className="lg:col-span-7 space-y-5">
-          <div>
+          <div className="text-center sm:text-left">
             <p className="font-mono text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
               Software Developer & Systems Builder
             </p>

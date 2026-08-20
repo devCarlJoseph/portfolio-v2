@@ -38,7 +38,7 @@ export function FeaturedProjectsSectionView() {
       {/* 3D Stack Carousel Container */}
       <div
         ref={containerRef}
-        className="relative mx-auto flex h-[480px] sm:h-[500px] w-full max-w-4xl items-center justify-center select-none"
+        className="relative mx-auto flex h-[520px] sm:h-[560px] md:h-[580px] w-full max-w-4xl items-center justify-center select-none"
       >
         {/* Navigation Arrows */}
         <button

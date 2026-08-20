@@ -7,10 +7,10 @@ export function AboutTechStackHeader() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 border-b border-border/60 pb-5"
+      className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 border-b border-border/60 pb-5 text-center sm:text-left"
     >
       <div>
-        <div className="flex items-center gap-2 mb-1.5">
+        <div className="flex items-center justify-center sm:justify-start gap-2 mb-1.5">
           <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground font-semibold">
             Technical Skillset
           </span>
@@ -20,7 +20,7 @@ export function AboutTechStackHeader() {
         </h2>
       </div>
 
-      <p className="max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground">
+      <p className="max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground mx-auto sm:mx-0">
         A breakdown of languages, frameworks, databases, and development tooling
         equipped with official logos.
       </p>
