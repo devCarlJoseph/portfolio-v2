@@ -43,6 +43,3 @@ export function ServicesGuaranteesSectionView() {
     </section>
   );
 }
-
-// Re-export with alias for compatibility
-export { ServicesGuaranteesSectionView as ServicesGuaranteesStrip };

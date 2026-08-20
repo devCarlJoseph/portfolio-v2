@@ -13,5 +13,3 @@ export function AboutEducationSectionView() {
     </section>
   );
 }
-
-export default AboutEducationSectionView;

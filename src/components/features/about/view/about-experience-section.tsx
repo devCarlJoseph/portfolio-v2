@@ -9,5 +9,3 @@ export function AboutExperienceSectionView() {
     </section>
   );
 }
-
-export default AboutExperienceSectionView;

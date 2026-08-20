@@ -11,12 +11,12 @@ export function FaqHeader() {
     >
       <div>
         <div className="flex items-center gap-2 mb-1.5">
-          <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground font-semibold">
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground font-semibold">
             03 — FAQ
           </span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground leading-tight">
-          Frequently Asked Questions
+          frequently asked questions
         </h2>
       </div>
 

@@ -10,16 +10,17 @@ export function ProjectHeroHeader() {
     >
       <div>
         <div className="flex items-center gap-2 mb-2">
-          <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground font-semibold">
-            01 — Projects Portfolio
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground font-semibold">
+            Projects Portfolio
           </span>
         </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.15]">
-          Featured Work & Architecture
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+          featured work & architecture
         </h1>
         <p className="mt-2.5 max-w-2xl text-xs sm:text-sm leading-relaxed text-muted-foreground">
-          A comprehensive catalog of production web applications, SaaS platforms,
-          mobile experiences, and full-stack systems built for performance, resilience, and scale.
+          A comprehensive catalog of production web applications, SaaS
+          platforms, mobile experiences, and full-stack systems built for
+          performance, resilience, and scale.
         </p>
       </div>
 

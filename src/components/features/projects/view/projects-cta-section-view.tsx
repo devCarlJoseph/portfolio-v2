@@ -7,6 +7,3 @@ export function ProjectsCtaSectionView() {
     </section>
   );
 }
-
-// Re-export with alias for compatibility
-export { ProjectsCtaSectionView as ProjectCtaBanner };

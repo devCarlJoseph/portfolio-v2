@@ -16,7 +16,7 @@ export function ServicesHeader() {
           </span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground leading-tight">
-          Services & Expertise
+          services & esxpertise
         </h2>
       </div>
       <p className="max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground">

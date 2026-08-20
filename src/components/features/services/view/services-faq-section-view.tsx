@@ -29,6 +29,3 @@ export function ServicesFaqSectionView() {
     </section>
   );
 }
-
-// Re-export with alias for compatibility
-export { ServicesFaqSectionView as ServicesFaqSection };

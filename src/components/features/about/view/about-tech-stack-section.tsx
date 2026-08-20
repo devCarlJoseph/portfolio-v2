@@ -26,5 +26,3 @@ export function AboutTechStackSectionView() {
     </section>
   );
 }
-
-export default AboutTechStackSectionView;

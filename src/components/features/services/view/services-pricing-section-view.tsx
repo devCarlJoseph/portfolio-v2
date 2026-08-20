@@ -43,6 +43,3 @@ export function ServicesPricingSectionView({
     </section>
   );
 }
-
-// Re-export with alias for compatibility
-export { ServicesPricingSectionView as ServicesHeroSection };

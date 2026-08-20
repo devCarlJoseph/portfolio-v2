@@ -11,12 +11,12 @@ export function AboutExperienceHeader() {
     >
       <div>
         <div className="flex items-center gap-2 mb-1.5">
-          <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground font-semibold">
-            02 — Work Experience
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground font-semibold  ">
+            Work Experience
           </span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground leading-tight">
-          Work Experience
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+          work experience
         </h2>
       </div>
 

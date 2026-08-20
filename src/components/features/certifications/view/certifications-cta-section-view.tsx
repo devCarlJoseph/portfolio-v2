@@ -7,6 +7,3 @@ export function CertificationsCtaSectionView() {
     </section>
   );
 }
-
-// Re-export with alias for compatibility
-export { CertificationsCtaSectionView as CertificationsCtaSection };

@@ -7,5 +7,3 @@ export function AboutCtaSectionView() {
     </section>
   );
 }
-
-export default AboutCtaSectionView;

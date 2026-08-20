@@ -3,6 +3,3 @@ import { CertificationsHeroBanner } from "@/components/features/certifications/c
 export function CertificationsHeroSectionView() {
   return <CertificationsHeroBanner />;
 }
-
-// Re-export with alias for compatibility
-export { CertificationsHeroSectionView as CertificationsHeroSection };

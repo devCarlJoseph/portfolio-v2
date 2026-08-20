@@ -1,5 +1,9 @@
 import { useState, useMemo } from "react";
-import { ALL_PROJECTS, type ProjectCategory, type ProjectItem } from "@/data/projects";
+import {
+  ALL_PROJECTS,
+  type ProjectCategory,
+  type ProjectItem,
+} from "@/data/projects";
 import { ProjectHeroHeader } from "@/components/features/projects/content/project-hero-header";
 import { ProjectFilterControls } from "@/components/features/projects/content/project-filter-controls";
 import { ProjectEmptyState } from "@/components/features/projects/content/project-empty-state";
@@ -10,9 +14,11 @@ import { motion } from "motion/react";
 
 export function ProjectsSectionView() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>("All");
+  const [selectedCategory, setSelectedCategory] =
+    useState<ProjectCategory>("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
-  const [activeModalProject, setActiveModalProject] = useState<ProjectItem | null>(null);
+  const [activeModalProject, setActiveModalProject] =
+    useState<ProjectItem | null>(null);
 
   // Compute category counts
   const categoryCounts = useMemo(() => {
@@ -37,7 +43,9 @@ export function ProjectsSectionView() {
       const inTitle = project.title.toLowerCase().includes(q);
       const inTagline = project.tagline.toLowerCase().includes(q);
       const inDesc = project.description.toLowerCase().includes(q);
-      const inStack = project.stack.some((tech) => tech.toLowerCase().includes(q));
+      const inStack = project.stack.some((tech) =>
+        tech.toLowerCase().includes(q),
+      );
 
       return inTitle || inTagline || inDesc || inStack;
     });
@@ -118,6 +126,3 @@ export function ProjectsSectionView() {
     </div>
   );
 }
-
-// Re-export with alias for compatibility
-export { ProjectsSectionView as ProjectsCatalogSectionView };

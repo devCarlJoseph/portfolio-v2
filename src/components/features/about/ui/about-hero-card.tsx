@@ -14,7 +14,7 @@ export function AboutHeroCard() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-8 lg:p-10">
         {/* Profile Image Column */}
         <div className="lg:col-span-5 flex flex-col items-center">
-          <div className="relative group w-full max-w-[320px] sm:max-w-[340px] aspect-square rounded-2xl overflow-hidden border border-border/80 bg-muted/40 shadow-lg">
+          <div className="relative group w-full max-w-[320px] sm:max-w-85 aspect-square rounded-2xl overflow-hidden border border-border/80 bg-muted/40 shadow-lg">
             {/* Light Mode Profile Image */}
             <img
               src={carlLight}
@@ -27,7 +27,7 @@ export function AboutHeroCard() {
               alt="Carl Joseph Sumagang"
               className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105 hidden dark:block"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
+            <div className="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent opacity-60" />
 
             {/* Bottom Tag on image */}
             <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-lg border border-border/80 bg-background/90 px-3 py-1.5 backdrop-blur-md">

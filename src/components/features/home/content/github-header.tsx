@@ -12,12 +12,12 @@ export function GithubHeader({ username }: { username: string }) {
     >
       <div>
         <div className="flex items-center gap-2 mb-1.5">
-          <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground font-semibold">
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground font-semibold">
             04 — Activity
           </span>
         </div>
         <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground leading-tight">
-          GitHub Contributions & Open Source
+          gitHub
         </h2>
       </div>
 

@@ -11,18 +11,18 @@ export function AboutTechStackHeader() {
     >
       <div>
         <div className="flex items-center gap-2 mb-1.5">
-          <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground font-semibold">
-            03 — Technical Skillset
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground font-semibold">
+            Technical Skillset
           </span>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground leading-tight">
-          Technical Stack & Ecosystem
+        <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+          technical stack & ecosystem
         </h2>
       </div>
 
       <p className="max-w-md text-xs sm:text-sm leading-relaxed text-muted-foreground">
-        A breakdown of languages, frameworks, databases, and development
-        tooling equipped with official logos.
+        A breakdown of languages, frameworks, databases, and development tooling
+        equipped with official logos.
       </p>
     </motion.div>
   );

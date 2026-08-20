@@ -9,5 +9,3 @@ export function AboutHeroSectionView() {
     </section>
   );
 }
-
-export default AboutHeroSectionView;

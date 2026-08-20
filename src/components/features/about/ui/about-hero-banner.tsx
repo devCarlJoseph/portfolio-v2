@@ -10,12 +10,12 @@ export function AboutHeroBanner() {
     >
       <div>
         <div className="flex items-center gap-2 mb-1.5">
-          <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground font-semibold">
-            01 — Profile & Bio
+          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground font-semibold  ">
+            Profile & Bio
           </span>
         </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground leading-[1.15]">
-          About Me
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
+          about me
         </h1>
       </div>
 
