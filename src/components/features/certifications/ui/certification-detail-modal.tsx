@@ -87,7 +87,7 @@ export function CertificationDetailModal({
           </div>
 
           {/* Body */}
-          <div className="p-6 sm:p-8 space-y-6 max-h-[calc(85vh-140px)] overflow-y-auto">
+          <div className="p-6 sm:p-8 space-y-6 max-h-[calc(85vh-140px)] overflow-y-auto scrollbar-thin">
             {/* Summary & Citation */}
             <div className="space-y-3">
               <h4 className="font-mono text-xs uppercase tracking-wider text-muted-foreground font-semibold">

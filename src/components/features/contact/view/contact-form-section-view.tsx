@@ -14,7 +14,7 @@ export function ContactFormSectionView({
   onEngagementChange,
 }: ContactFormSectionViewProps) {
   return (
-    <section id="contact-form" className="space-y-6 sm:space-y-8 max-w-6xl mx-auto py-10 sm:py-14 border-t border-border/50">
+    <section id="contact-form" className="space-y-6 sm:space-y-8 py-10 sm:py-14 border-t border-border/50">
       {/* Section Header */}
       <ContactFormHeader />
 

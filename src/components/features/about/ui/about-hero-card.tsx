@@ -35,7 +35,7 @@ export function AboutHeroCard() {
                 Carl Joseph
               </span>
               <span className="font-mono text-[11px] text-muted-foreground">
-                Full-Stack Engineer
+                Software Developer
               </span>
             </div>
           </div>

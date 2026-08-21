@@ -145,21 +145,15 @@ export function ProjectDeckCard({
 
       {/* Main Container */}
       <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-border bg-card p-3 sm:p-4 shadow-xl transition-all duration-300 hover:border-foreground/40 dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-neutral-950/90">
-        
-        {/* ======================================================== */}
-        {/* DETAILED MACBOOK PRO HARDWARE CHASSIS */}
-        {/* ======================================================== */}
         <div className="relative overflow-hidden rounded-xl border border-neutral-800 bg-[#18181b] dark:bg-[#111113] shadow-md">
-          
           {/* Top Lid Outer Border & Camera Notch */}
           <div className="relative flex h-8 items-center justify-between border-b border-neutral-800 bg-[#202024] dark:bg-[#161618] px-3">
-            
             {/* macOS Window Controls (Traffic Lights with micro rings) */}
             <div className="flex items-center gap-1.5">
               <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#ff5f56] border border-[#e0443e] shadow-2xs" />
               <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#ffbd2e] border border-[#dea123] shadow-2xs" />
               <span className="flex h-2.5 w-2.5 items-center justify-center rounded-full bg-[#27c93f] border border-[#1aab29] shadow-2xs" />
-              
+
               {/* Safari Navigation Chevrons */}
               <div className="hidden sm:flex items-center gap-0.5 ml-2 text-neutral-400">
                 <ChevronLeft className="h-3 w-3" />
@@ -171,7 +165,7 @@ export function ProjectDeckCard({
             <div className="flex items-center gap-1.5 rounded-md border border-neutral-700/60 bg-[#131316] dark:bg-[#0c0c0e] px-2.5 py-0.5 text-center shadow-inner">
               <Lock className="h-2.5 w-2.5 text-emerald-400 shrink-0" />
               <span className="font-mono text-[9.5px] text-neutral-200 font-medium tracking-tight truncate max-w-[120px] sm:max-w-[160px]">
-                https://{project.id}.dev
+                https://{project.id}.com
               </span>
               <RotateCw className="h-2 w-2 text-neutral-400 hidden sm:inline" />
             </div>
@@ -226,9 +220,6 @@ export function ProjectDeckCard({
           </div>
         </div>
 
-        {/* ======================================================== */}
-        {/* DETAILED PROJECT METADATA & TECHNICAL SPECS */}
-        {/* ======================================================== */}
         <div className="mt-3.5 space-y-3 px-1">
           {/* Header Row: Title + Tagline */}
           <div className="flex items-start justify-between gap-2">
@@ -263,7 +254,9 @@ export function ProjectDeckCard({
                   className="inline-flex items-center gap-1 rounded border border-border bg-muted/50 px-2 py-0.5 font-mono text-[9.5px]"
                 >
                   <span className="text-muted-foreground">{m.label}:</span>
-                  <span className="font-semibold text-foreground">{m.value}</span>
+                  <span className="font-semibold text-foreground">
+                    {m.value}
+                  </span>
                 </span>
               ))}
             </div>

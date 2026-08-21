@@ -2,7 +2,7 @@ export interface ProjectItem {
   id: string;
   title: string;
   tagline: string;
-  category: "Full-Stack Web" | "Mobile App" | "SaaS Platform" | "Landing & Platform" | "Enterprise ERP";
+  category: "Full-Stack Web" | "SaaS Platform" | "Landing & Platform" | "Enterprise ERP";
   year: string;
   featured: boolean;
   description: string;
@@ -17,51 +17,51 @@ export interface ProjectItem {
 
 export const ALL_PROJECTS: ProjectItem[] = [
   {
-    id: "haygo-car",
-    title: "HayGo Car Rental",
-    tagline: "Car Rental",
-    category: "Full-Stack Web",
+    id: "tourism-hub",
+    title: "Tourism Hub",
+    tagline: "Website for Tourism Students",
+    category: "Landing & Platform",
     year: "2025",
     featured: true,
     description:
-      "Modern headless commerce engine featuring sub-second product search, Stripe payments, real-time inventory, and an analytics dashboard.",
+      "A full-stack web platform designed for tourism students to explore destinations, access travel resources, and manage academic tourism-related content.",
     longDescription:
-      "Commerce Flow is an enterprise-grade headless storefront engineered for scale. It features dynamic server-side rendering, instant faceted search, secure webhooks for multi-currency Stripe checkout, automated tax calculations, and a high-performance inventory synchronization engine.",
-    imageUrl: "/projects/project-ecommerce.jpg",
-    stack: ["Php", "React", "TypeScript", "MySQL", "Tailwind CSS"],
+      "Tourism Hub is a comprehensive web application built for tourism students, providing a centralized platform to browse travel destinations, access curated educational resources, and collaborate on tourism-related coursework. It features a modern UI with server-side rendering, a PostgreSQL-backed database with Prisma ORM for structured content management, and a responsive design optimized for both desktop and mobile use.",
+    imageUrl: "/projects/tourism.png",
+    stack: ["Next.js", "ShadCn", "TypeScript", "PostgreSQL", "PrismaOrm", "Tailwind CSS"],
     features: [
-      "Sub-second faceted product filtering & instant search",
-      "Stripe Elements checkout with webhook fulfillment",
-      "Real-time stock reservation and webhook synchronization",
-      "Automated PDF invoicing and buyer receipts",
-      "Admin order management portal with revenue analytics",
+      "Destination catalog with search and filtering",
+      "Student resource library for tourism coursework",
+      "Responsive layout optimized for all devices",
+      "Server-side rendering for fast page loads",
+      "PostgreSQL database with Prisma ORM integration",
     ],
     metrics: [
       { label: "Page Speed", value: "99/100" },
       { label: "Checkout Time", value: "< 35s" },
       { label: "Test Coverage", value: "94%" },
     ],
-    githubUrl: "https://github.com/devCarlJoseph/haygo-car-rental.git",
+    githubUrl: "https://github.com/devCarlJoseph/tourism-hub.git",
   },
   {
-    id: "elluna",
-    title: "Elluna",
-    tagline: "Mobile Pregnancy Tracker & Baby Growth",
-    category: "Mobile App",
+    id: "codego",
+    title: "CodeGo",
+    tagline: "An Learning Platform for those who wants to learn Web Development.",
+    category: "Landing & Platform",
     year: "2025",
     featured: true,
     description:
-      "Cross-platform fitness app with smart workout logging, activity rings, Apple Health sync, and automated progressive overload charts.",
+      "An interactive learning platform that teaches web development fundamentals through structured lessons, hands-on coding exercises, and progress tracking.",
     longDescription:
-      "Pulse Fitness delivers an intuitive mobile companion for athletes and gym-goers. Built with React Native and Expo, it synchronizes workout sessions offline-first, syncs biometrics with Apple Health and Google Fit, and generates predictive strength progressions with D3 visual charts.",
-    imageUrl: "/projects/project-fitness-app.jpg",
-    stack: ["React Native", "Expo", "Firebase", "HealthKit", "TypeScript", "Tailwind CSS"],
+      "CodeGo is an educational web application designed for aspiring developers who want to learn web development from scratch. It offers structured learning paths covering HTML, CSS, JavaScript, and modern frameworks, with interactive coding exercises and real-time feedback. Built with Next.js and TypeScript, the platform features user authentication, progress tracking, and a clean UI powered by ShadCn and Tailwind CSS.",
+    imageUrl: "/projects/codego.png",
+    stack: ["Next.js", "ShadCn", "TypeScript", "PrismaOrm", "PostgreSQL", "Tailwind CSS"],
     features: [
-      "Offline-first session caching with automated sync",
-      "Apple Health & Google Fit bidirectional metric import",
-      "Adaptive rest timers with background notifications",
-      "Progressive overload progression visualizer",
-      "Custom routine builder with video demo guides",
+      "Structured web development learning paths",
+      "Interactive coding exercises with real-time feedback",
+      "User progress tracking and completion badges",
+      "Beginner-friendly curriculum from HTML to modern frameworks",
+      "Clean, accessible UI for focused learning",
     ],
     metrics: [
       { label: "Crash Free Rate", value: "99.8%" },
@@ -69,35 +69,34 @@ export const ALL_PROJECTS: ProjectItem[] = [
       { label: "App Rating", value: "4.9 ★" },
     ],
     liveUrl: "",
-    githubUrl: "https://github.com/devCarlJoseph/elluna-app.git",
+    githubUrl: "https://github.com/devCarlJoseph/codego-app.git",
   },
   {
-    id: "srp-attendance",
-    title: "SRP Acolytes Attendance Tracker",
-    tagline: "Real-Time SaaS Analytics & Funnel Platform",
-    category: "SaaS Platform",
-    year: "2024",
-    featured: true,
+    id: "truenai",
+    title: "TrueNai",
+    tagline: "An AI-powered learning buddy designed to empower students in their academic journey",
+    category: "Landing & Platform",
+    year: "2025",
+    featured: false,
     description:
-      "Business intelligence platform offering live metric tracking, customer funnel visualization, cohort retention, and automated reports.",
+      "An award-winning AI study companion that won 3rd Place and Best in Tech Integration, built with Gemini AI to help students learn effectively and excel in their studies.",
     longDescription:
-      "InsightLogix ingests millions of telemetry events per day to empower founders with clear operational metrics. With customized D3.js visualization widgets, WebSocket streaming updates, and automated weekly digests, teams make data-backed growth decisions faster.",
-    imageUrl: "/projects/project-saas-analytics.jpg",
-    stack: ["React", "Supabase", "PostgreSQL", "Tailwind CSS"],
+      "TrueNai is an award-winning platform recognized with 3rd Place and Best in Tech Integration at Cordova Public College's IT Days Hackathon. Designed as an intelligent AI study buddy, it guides students through challenging concepts with personalized assistance, interactive explanations, and step-by-step learning support. Powered by Next.js, TypeScript, Gemini AI, Supabase, and Tailwind CSS.",
+    imageUrl: "/projects/truenai.png",
+    stack: ["Next.js", "TypeScript", "ShadCn", "Gemini AI", "Supabase", "PostgreSQL", "Tailwind CSS"],
     features: [
-      "Live WebSocket telemetry ingestion pipeline",
-      "Interactive funnel dropoff & cohort retention charts",
-      "Configurable KPI anomaly alerts via Slack/Email",
-      "Granular role-based access control (RBAC)",
-      "Automated CSV/PDF scheduled report exports",
+      "Gemini AI-powered intelligent content analysis",
+      "Real-time data management with Supabase",
+      "Award-winning tech integration architecture",
+      "Modern, responsive UI with ShadCn components",
+      "PostgreSQL-backed data persistence and querying",
     ],
     metrics: [
       { label: "Events/Day", value: "2.4M" },
       { label: "Query Latency", value: "< 45ms" },
       { label: "Uptime", value: "99.95%" },
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/devCarlJoseph/truenai-hackathon.git",
   },
   {
     id: "portoflio",
@@ -105,27 +104,26 @@ export const ALL_PROJECTS: ProjectItem[] = [
     tagline: "A New Version of Carl Joseph Sumagang Portfolio",
     category: "Landing & Platform",
     year: "2025",
-    featured: true,
+    featured: false,
     description:
-      "Luxury real estate platform with interactive map filtering, virtual 3D property showcases, and optimized lead-capture funnels.",
+      "A modern, redesigned personal portfolio showcasing projects, skills, and experience with smooth animations and a polished developer-focused design.",
     longDescription:
-      "Luxura Estates is built to turn high-net-worth browsers into scheduled private viewing appointments. Featuring interactive Mapbox clustering, high-resolution media carousels, instant mortgage calculators, and an integrated CRM webhook pipeline.",
+      "Portfolio V2 is the latest iteration of Carl Joseph Sumagang's personal portfolio website, rebuilt from the ground up with React, TypeScript, and Tailwind CSS. It features fluid page transitions powered by Motion, a curated project showcase, an interactive tech stack section, and a clean, professional layout designed to highlight development expertise and creative work.",
     imageUrl: "/projects/portfolio.png",
     stack: ["React", "TypeScript", "Tailwind CSS", "Motion", "ShadCn"],
     features: [
-      "Mapbox spatial radius property search with custom markers",
-      "High-speed 3D virtual tour embed support",
-      "Dynamic mortgage & amortization payment estimator",
-      "Instant broker scheduling calendar with automated email confirmations",
-      "Optimized SEO schema markup for real estate listings",
+      "Smooth page transitions and scroll-driven animations",
+      "Curated project showcase with detailed case studies",
+      "Interactive tech stack and skills display",
+      "Responsive design optimized for all screen sizes",
+      "Clean, professional developer-focused layout",
     ],
     metrics: [
       { label: "Lead Conv.", value: "+38%" },
       { label: "LCP Score", value: "0.8s" },
       { label: "SEO Score", value: "100" },
     ],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/devCarlJoseph/portfolio-v2.git",
   },
   {
     id: "hysync ",
@@ -133,19 +131,19 @@ export const ALL_PROJECTS: ProjectItem[] = [
     tagline: "Hysync Server for the game Hytale",
     category: "Landing & Platform",
     year: "2025",
-    featured: false,
+    featured: true,
     description:
-      "Editorial agency platform featuring fluid micro-interactions, dark mode aesthetics, dynamic case studies, and fast static generation.",
+      "A landing page and community platform for the Hysync game server, built for the upcoming Hytale game with a sleek, immersive design.",
     longDescription:
-      "Mayi Creative is a showcase of cutting-edge web design and smooth typography. Built for a boutique creative agency, it combines frictionless page transitions, responsive video showcases, and a bespoke inquiry funnel.",
+      "Hysync is a community-driven web platform built for the Hysync game server in the upcoming Hytale game. It features an immersive landing page with fluid animations, server information, community updates, and a modern design that captures the spirit of the Hytale universe. Built with Next.js, TypeScript, Tailwind CSS, and Motion for smooth interactions.",
     imageUrl: "/projects/hysync.png",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Motion"],
     features: [
-      "Zero-JS baseline architecture with island hydration",
-      "Fluid scroll-driven cursor animations and smooth page reveals",
-      "Interactive case study galleries with full-bleed imagery",
-      "Accessible dark/light color grading system",
-      "Static site generation with edge CDN deployment",
+      "Immersive landing page with fluid scroll animations",
+      "Server information and community updates hub",
+      "Modern design inspired by the Hytale universe",
+      "Responsive layout for desktop and mobile",
+      "Smooth page transitions with Motion animations",
     ],
     metrics: [
       { label: "Performance", value: "100/100" },
@@ -153,7 +151,7 @@ export const ALL_PROJECTS: ProjectItem[] = [
       { label: "SEO Rank", value: "#1" },
     ],
     liveUrl: "https://www.hysync.org/",
-    githubUrl: "https://github.com",
+    githubUrl: "https://github.com/arielbatoon09/hysync-web.git",
   },
 ];
 
@@ -161,7 +159,6 @@ export const PROJECT_CATEGORIES = [
   "All",
   "Full-Stack Web",
   "SaaS Platform",
-  "Mobile App",
   "Landing & Platform",
   "Enterprise ERP",
 ] as const;

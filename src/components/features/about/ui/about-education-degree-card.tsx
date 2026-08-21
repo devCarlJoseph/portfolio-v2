@@ -30,19 +30,19 @@ export function AboutEducationDegreeCard() {
                 Bachelor of Science in Information Technology
               </h3>
               <p className="text-xs sm:text-sm text-muted-foreground font-medium">
-                Major in Software Engineering & Database Systems
+                Cordova Public College
               </p>
             </div>
           </div>
 
           <div className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-lg border border-border bg-muted/30 px-3 py-1 font-mono text-xs text-muted-foreground font-semibold">
             <Calendar className="h-3 w-3" />
-            <span>Graduated</span>
+            <span>2024 — Present</span>
           </div>
         </div>
 
         <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground mb-5">
-          Comprehensive study encompassing data structures, relational database modeling, software architecture, web application development, and systems analysis. Completed with emphasis on building production-ready capstone software.
+          Currently pursuing a Bachelor of Science in Information Technology at Cordova Public College, with coursework covering data structures, relational database modeling, software architecture, web application development, and systems analysis.
         </p>
 
         {/* Core Coursework */}

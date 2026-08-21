@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { NavLink } from "react-router-dom";
-import { Sparkles, FolderGit2, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export function ServiceCtaCard() {
   return (
@@ -28,7 +28,8 @@ export function ServiceCtaCard() {
           </h2>
 
           <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">
-            Reach out with your project details, and I will prepare a personalized scope estimate and technical roadmap.
+            Reach out with your project details, and I will prepare a
+            personalized scope estimate and technical roadmap.
           </p>
         </div>
 
@@ -37,15 +38,13 @@ export function ServiceCtaCard() {
             to="/contact"
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-6 py-3.5 text-xs sm:text-sm font-semibold text-background transition-all hover:opacity-90 active:scale-95 shadow-sm"
           >
-            <Sparkles className="h-4 w-4" />
-            <span>Get in Touch / Quote</span>
+            <span>Get in Touch</span>
           </NavLink>
 
           <NavLink
             to="/projects"
             className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 py-3.5 text-xs sm:text-sm font-semibold text-foreground transition-all hover:bg-muted active:scale-95"
           >
-            <FolderGit2 className="h-4 w-4" />
             <span>View Case Studies</span>
             <ArrowUpRight className="h-3.5 w-3.5" />
           </NavLink>

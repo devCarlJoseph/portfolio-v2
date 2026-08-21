@@ -27,7 +27,7 @@ const GUARANTEES = [
 
 export function ServicesGuaranteesSectionView() {
   return (
-    <section className="space-y-6 max-w-6xl mx-auto py-10 sm:py-14 border-t border-border/50">
+    <section className="space-y-6 py-10 sm:py-14 border-t border-border/50">
       <ServicesGuaranteesHeader />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         {GUARANTEES.map((item, idx) => (

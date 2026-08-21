@@ -27,7 +27,7 @@ const TIMELINE_EXPERIENCES: CompanyExperience[] = [
     roles: [
       {
         title: "Independent Software Engineer",
-        dateBadge: "2023 — PRESENT",
+        dateBadge: "2025 — PRESENT",
         summary:
           "Designing and engineering custom software products, specializing in Websites & Web Apps, Custom Software, Mobile Development (iOS/Android), and Generative AI integrations. Sourced globally through platforms and direct referrals.",
         highlights: [
@@ -60,84 +60,8 @@ const TIMELINE_EXPERIENCES: CompanyExperience[] = [
           "PostgreSQL",
           "Supabase",
           "Tailwind CSS",
-          "Stripe APIs",
+          "Restful APIs",
           "Generative AI",
-        ],
-      },
-    ],
-  },
-  {
-    id: "tech-systems",
-    initials: "TS",
-    company: "Tech Systems & Enterprise Solutions",
-    roles: [
-      {
-        title: "Full-Stack Software Engineer",
-        dateBadge: "2022 — 2023",
-        summary:
-          "Collaborated in an agile engineering squad to design, build, and optimize high-velocity relational database schemas, RESTful API services, and enterprise dashboard interfaces.",
-        highlights: [
-          {
-            label: "Enterprise APIs",
-            text: "Engineered scalable RESTful services and relational database schemas with PostgreSQL and MySQL.",
-          },
-          {
-            label: "Security & RBAC",
-            text: "Implemented role-based access control (RBAC), JWT authentication token rotation, and automated audit logging.",
-          },
-          {
-            label: "Performance Tuning",
-            text: "Reduced core API response latency by 35% through Redis caching layers, query optimization, and connection pooling.",
-          },
-          {
-            label: "Engineering Standards",
-            text: "Mentored team members in Git branching workflows, peer code reviews, and TypeScript strict type safety.",
-          },
-        ],
-        skills: [
-          "TypeScript",
-          "React",
-          "Node.js",
-          "Express",
-          "MySQL",
-          "Redis",
-          "REST APIs",
-          "Git",
-        ],
-      },
-    ],
-  },
-  {
-    id: "digital-studio",
-    initials: "DS",
-    company: "Digital Studio & Creative Labs",
-    roles: [
-      {
-        title: "Frontend & Mobile App Developer",
-        dateBadge: "2021 — 2022",
-        summary:
-          "Pioneered cross-platform mobile application development and interactive web interfaces with focus on smooth user animations and design system consistency.",
-        highlights: [
-          {
-            label: "Cross-Platform Mobile",
-            text: "Built cross-platform iOS and Android mobile features utilizing React Native and Expo with offline-first caching.",
-          },
-          {
-            label: "Fluid UI & Motion",
-            text: "Engineered interactive micro-animations and smooth gesture-driven UI transitions using Framer Motion.",
-          },
-          {
-            label: "Design Tokens",
-            text: "Partnered directly with UI/UX designers to translate Figma design tokens into reusable, accessible component libraries.",
-          },
-        ],
-        skills: [
-          "React Native",
-          "Expo",
-          "JavaScript (ES6+)",
-          "Tailwind CSS",
-          "Framer Motion",
-          "Figma",
         ],
       },
     ],

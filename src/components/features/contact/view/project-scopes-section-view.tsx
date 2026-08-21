@@ -10,7 +10,7 @@ export function ProjectScopesSectionView({
   onSelectScope,
 }: ProjectScopesSectionViewProps) {
   return (
-    <section className="space-y-6 sm:space-y-8 max-w-6xl mx-auto pb-10 sm:pb-14">
+    <section className="space-y-6 sm:space-y-8 pb-10 sm:pb-14">
       {/* Section Header */}
       <ProjectScopesHeader />
 

@@ -104,8 +104,31 @@ export async function fetchGitHubGraphQLData(
     throw new Error("No GitHub token available");
   }
 
-  // Use `viewer` query to get the authenticated user's full contribution
-  // calendar including private contributions
+  const PINNED_REPOS = [
+    "rpg-console-app",
+    "portfolio-v2",
+    "truenai-hackathon",
+    "codego-app",
+    "elluna-app",
+    "tourism-hub",
+  ];
+
+  const repoFragments = PINNED_REPOS.map(
+    (name, i) => `
+      repo${i}: repository(name: "${name}") {
+        name
+        description
+        url
+        stargazerCount
+        forkCount
+        primaryLanguage {
+          name
+          color
+        }
+      }
+    `
+  ).join("\n");
+
   const graphqlQuery = {
     query: `
       query {
@@ -124,19 +147,7 @@ export async function fetchGitHubGraphQLData(
               }
             }
           }
-          repositories(first: 6, orderBy: {field: UPDATED_AT, direction: DESC}, privacy: PUBLIC) {
-            nodes {
-              name
-              description
-              url
-              stargazerCount
-              forkCount
-              primaryLanguage {
-                name
-                color
-              }
-            }
-          }
+          ${repoFragments}
         }
       }
     `,
@@ -205,20 +216,20 @@ export async function fetchGitHubGraphQLData(
 
   const monthLabels = calculateMonthLabels(weeks);
 
-  const rawRepos = userData.repositories?.nodes || [];
+  const rawRepos = PINNED_REPOS.map((_, i) => userData[`repo${i}`]).filter(Boolean);
   const defaultDescriptions: Record<string, string> = {
+    "rpg-console-app":
+      "A console-based RPG game application with interactive gameplay mechanics and character progression.",
     "portfolio-v2":
       "Modern developer portfolio and showcase built with React 19, Vite, Tailwind CSS, and Motion.",
-    "laravel-api-docker":
-      "Containerized Laravel REST API infrastructure with Docker, MySQL, and Nginx integration.",
     "truenai-hackathon":
-      "Hackathon project built with TypeScript, modern full-stack web architectures, and AI integration.",
-    "devCarlJoseph":
-      "Config files, developer profile documentation, and open source configurations.",
-    "im-assignment-task":
-      "Interactive information management and system design implementation in TypeScript.",
-    "e-commerce-cart-system":
-      "Object-oriented e-commerce shopping cart and checkout architecture.",
+      "Award-winning hackathon platform with Gemini AI integration, earning 3rd Place and Best in Tech.",
+    "codego-app":
+      "Interactive web development learning platform with structured lessons and coding exercises.",
+    "elluna-app":
+      "A full-stack application project showcasing modern web development practices and design.",
+    "tourism-hub":
+      "Full-stack web platform for tourism students to explore destinations and access travel resources.",
   };
 
   const repositories: RepoItem[] = rawRepos.map(

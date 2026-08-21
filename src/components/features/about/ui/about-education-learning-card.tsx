@@ -31,17 +31,20 @@ export function AboutEducationLearningCard() {
             <span>Modern React & Next.js Architecture</span>
           </div>
           <p className="text-[11px]">
-            Deep exploration into React Server Components, streaming SSR, and edge compute models.
+            Deep exploration into React Server Components, streaming SSR, and
+            edge compute models.
           </p>
         </div>
 
         <div className="rounded-xl border border-border/50 bg-muted/20 p-3">
           <div className="flex items-center gap-1.5 font-bold text-foreground mb-1">
             <Award className="h-3.5 w-3.5 text-foreground" />
-            <span>Full-Stack Cloud & Supabase</span>
+            <span>Laravel Architecture</span>
           </div>
           <p className="text-[11px]">
-            Specialized in PostgreSQL Row-Level Security, vector embeddings, and real-time event sync.
+            Skilled in building scalable Laravel applications using MVC
+            architecture, Eloquent ORM, RESTful APIs, middleware, and clean code
+            practices.
           </p>
         </div>
 
@@ -51,7 +54,8 @@ export function AboutEducationLearningCard() {
             <span>Mobile UX with React Native</span>
           </div>
           <p className="text-[11px]">
-            Mastery of offline SQLite caching, Expo EAS continuous delivery, and native gesture handlers.
+            Mastery of offline SQLite caching, Expo EAS continuous delivery, and
+            native gesture handlers.
           </p>
         </div>
       </div>

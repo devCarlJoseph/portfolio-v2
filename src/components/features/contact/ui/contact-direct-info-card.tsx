@@ -15,7 +15,7 @@ export function ContactDirectInfoCard() {
       <div className="space-y-3">
         {/* Direct Mailto Button */}
         <a
-          href="mailto:dev.carljoseph@gmail.com?subject=Project%20Inquiry%20from%20Portfolio"
+          href="mailto:carljosephsumagang17@gmail.com?subject=Project%20Inquiry%20from%20Portfolio"
           className="w-full flex items-center justify-between gap-2 rounded-xl bg-foreground p-3 text-background transition-all hover:opacity-90 active:scale-[0.99] group shadow-xs"
         >
           <div className="flex items-center gap-2.5 min-w-0">
@@ -27,7 +27,7 @@ export function ContactDirectInfoCard() {
                 Send Email Directly
               </span>
               <span className="block text-xs sm:text-sm font-semibold truncate">
-                dev.carljoseph@gmail.com
+                carljosephsumagang17@gmail.com
               </span>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import type { StudioProps } from "@/components/features/home/types/studio";
-import { Layers } from "lucide-react";
+import { Layers, ShoppingBag, LayoutDashboard, Globe } from "lucide-react";
 
 export function ProjectSelector({
   selectedProjectType,
@@ -23,13 +23,14 @@ export function ProjectSelector({
             setActiveJsonTab("storefront");
             setIsCartOpen(false);
           }}
-          className={`rounded px-2.5 py-1 font-medium transition-all cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 rounded px-2.5 py-1 font-medium transition-all cursor-pointer ${
             selectedProjectType === "storefront"
               ? "bg-neutral-900 text-white shadow-xs dark:bg-white dark:text-neutral-900 font-semibold"
               : "text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
           }`}
         >
-          🛍️ E-Commerce
+          <ShoppingBag className="h-3 w-3" />
+          <span>E-Commerce</span>
         </button>
         <button
           type="button"
@@ -38,13 +39,14 @@ export function ProjectSelector({
             setActiveJsonTab("saas");
             setIsCartOpen(false);
           }}
-          className={`rounded px-2.5 py-1 font-medium transition-all cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 rounded px-2.5 py-1 font-medium transition-all cursor-pointer ${
             selectedProjectType === "saas"
               ? "bg-neutral-900 text-white shadow-xs dark:bg-white dark:text-neutral-900 font-semibold"
               : "text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
           }`}
         >
-          📊 SaaS Platform
+          <LayoutDashboard className="h-3 w-3" />
+          <span>SaaS Platform</span>
         </button>
         <button
           type="button"
@@ -53,13 +55,14 @@ export function ProjectSelector({
             setActiveJsonTab("business");
             setIsCartOpen(false);
           }}
-          className={`rounded px-2.5 py-1 font-medium transition-all cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 rounded px-2.5 py-1 font-medium transition-all cursor-pointer ${
             selectedProjectType === "business"
               ? "bg-neutral-900 text-white shadow-xs dark:bg-white dark:text-neutral-900 font-semibold"
               : "text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-neutral-800"
           }`}
         >
-          🚀 Business Site
+          <Globe className="h-3 w-3" />
+          <span>Business Site</span>
         </button>
       </div>
     </div>
