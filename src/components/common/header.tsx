@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { ArrowUpRight, Menu, X, Code2, Mail, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { ThemeToggle } from "@/components/common/theme-toggle";
@@ -14,11 +14,6 @@ const NAV_LINKS = [
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location.pathname]);
 
   useEffect(() => { 
     if (isMobileMenuOpen) {
@@ -125,6 +120,7 @@ export function Header() {
                   <NavLink
                     key={link.to}
                     to={link.to}
+                    onClick={() => setIsMobileMenuOpen(false)}
                     className={({ isActive }) =>
                       `flex items-center justify-between rounded-xl px-4 py-3 text-sm font-medium transition-all ${
                         isActive
@@ -151,6 +147,7 @@ export function Header() {
               <div className="flex flex-col gap-2.5 pt-2 border-t border-border/60">
                 <NavLink
                   to="/contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 rounded-xl bg-foreground px-4 py-3 text-sm font-semibold text-background transition-all hover:opacity-90 active:scale-95 shadow-sm"
                 >
                   <Mail className="h-4 w-4" />

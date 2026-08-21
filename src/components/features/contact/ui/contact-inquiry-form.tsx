@@ -27,7 +27,7 @@ const BUDGET_RANGES = [
 ];
 
 export function ContactInquiryForm({
-  selectedEngagement = "web-development",
+  selectedEngagement,
   onEngagementChange,
 }: ContactInquiryFormProps) {
   const formId = useId();
@@ -36,16 +36,13 @@ export function ContactInquiryForm({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    engagement: selectedEngagement,
+    engagement: selectedEngagement ?? "web-development",
     budget: "₱50k — ₱150k ($1k–$3k)",
     message: "",
   });
 
-  useEffect(() => {
-    if (selectedEngagement) {
-      setFormData((prev) => ({ ...prev, engagement: selectedEngagement }));
-    }
-  }, [selectedEngagement]);
+  const isEngagementControlled = selectedEngagement !== undefined;
+  const engagement = selectedEngagement ?? formData.engagement;
 
   // Click outside to close dropdown
   useEffect(() => {
@@ -127,16 +124,18 @@ export function ContactInquiryForm({
               </Label>
               <div className="flex flex-wrap gap-1.5">
                 {SERVICE_OPTIONS.map((opt) => {
-                  const isSelected = formData.engagement === opt.id;
+                  const isSelected = engagement === opt.id;
                   return (
                     <button
                       key={opt.id}
                       type="button"
                       onClick={() => {
-                        setFormData((prev) => ({
-                          ...prev,
-                          engagement: opt.id,
-                        }));
+                        if (!isEngagementControlled) {
+                          setFormData((prev) => ({
+                            ...prev,
+                            engagement: opt.id,
+                          }));
+                        }
                         onEngagementChange?.(opt.id);
                       }}
                       className={`rounded-lg px-2.5 py-1.5 font-mono text-xs font-medium transition-all cursor-pointer ${

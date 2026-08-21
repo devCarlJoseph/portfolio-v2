@@ -40,4 +40,8 @@ function Badge({
   )
 }
 
-export { Badge, badgeVariants }
+export { Badge }
+
+// Variant helpers are part of the public component API.
+// eslint-disable-next-line react-refresh/only-export-components
+export { badgeVariants }

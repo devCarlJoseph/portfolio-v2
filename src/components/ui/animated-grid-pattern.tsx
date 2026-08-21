@@ -43,15 +43,16 @@ export function AnimatedGridPattern({
 }: AnimatedGridPatternProps) {
   const id = useId()
   const containerRef = useRef<SVGSVGElement | null>(null)
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const [squares, setSquares] = useState<Array<Square>>([])
 
   const getPos = useCallback((): [number, number] => {
+    const { clientWidth = 0, clientHeight = 0 } = containerRef.current ?? {}
+
     return [
-      Math.floor((Math.random() * dimensions.width) / width),
-      Math.floor((Math.random() * dimensions.height) / height),
+      Math.floor((Math.random() * clientWidth) / width),
+      Math.floor((Math.random() * clientHeight) / height),
     ]
-  }, [dimensions.height, dimensions.width, height, width])
+  }, [height, width])
 
   const generateSquares = useCallback(
     (count: number) => {
@@ -84,29 +85,15 @@ export function AnimatedGridPattern({
   )
 
   useEffect(() => {
-    if (dimensions.width && dimensions.height) {
-      setSquares(generateSquares(numSquares))
-    }
-  }, [dimensions.width, dimensions.height, generateSquares, numSquares])
-
-  useEffect(() => {
     const element = containerRef.current
     let resizeObserver: ResizeObserver | null = null
 
     if (element) {
       resizeObserver = new ResizeObserver((entries) => {
         for (const entry of entries) {
-          setDimensions((currentDimensions) => {
-            const nextWidth = entry.contentRect.width
-            const nextHeight = entry.contentRect.height
-            if (
-              currentDimensions.width === nextWidth &&
-              currentDimensions.height === nextHeight
-            ) {
-              return currentDimensions
-            }
-            return { width: nextWidth, height: nextHeight }
-          })
+          if (entry.contentRect.width && entry.contentRect.height) {
+            setSquares(generateSquares(numSquares))
+          }
         }
       })
 
@@ -118,7 +105,7 @@ export function AnimatedGridPattern({
         resizeObserver.disconnect()
       }
     }
-  }, [])
+  }, [generateSquares, numSquares])
 
   return (
     <svg
