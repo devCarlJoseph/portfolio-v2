@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { ArrowUpRight, Menu, X, Code2, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Menu, X, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { ThemeToggle } from "@/components/common/theme-toggle";
 
@@ -15,7 +15,7 @@ const NAV_LINKS = [
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => { 
+  useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
@@ -78,7 +78,9 @@ export function Header() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open navigation menu"}
+              aria-label={
+                isMobileMenuOpen ? "Close menu" : "Open navigation menu"
+              }
               aria-expanded={isMobileMenuOpen}
               className="md:hidden flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-card text-foreground transition-all hover:bg-muted active:scale-95 cursor-pointer shadow-xs"
             >
@@ -150,8 +152,7 @@ export function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 rounded-xl bg-foreground px-4 py-3 text-sm font-semibold text-background transition-all hover:opacity-90 active:scale-95 shadow-sm"
                 >
-                  <Mail className="h-4 w-4" />
-                  <span>Get in Touch / Contact</span>
+                  <span> Contact</span>
                 </NavLink>
 
                 <a
@@ -160,7 +161,6 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 py-2.5 text-xs font-semibold text-foreground transition-all hover:bg-muted active:scale-95"
                 >
-                  <Code2 className="h-4 w-4" />
                   <span>GitHub Profile</span>
                 </a>
               </div>
