@@ -34,10 +34,10 @@ export function CertificationBadgeCard({
       onClick={() => onSelect(cert)}
       className="group relative flex flex-col justify-between rounded-2xl border border-dashed border-border/90 bg-card p-6 sm:p-7 shadow-sm transition-all duration-300 hover:border-foreground/40 hover:shadow-xl cursor-pointer select-none"
     >
-      {/* Top Header Row: Track code & Verified Stamp */}
+      {/* Top Header Row: Category & Verified Stamp */}
       <div className="flex items-center justify-between pb-4 border-b border-border/50">
         <span className="font-mono text-[10.5px] uppercase tracking-[0.25em] text-muted-foreground font-semibold">
-          {cert.trackCode}
+          {cert.category}
         </span>
 
         <div className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-muted/30 px-2.5 py-0.5 font-mono text-[10px] text-muted-foreground">
